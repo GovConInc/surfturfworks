@@ -527,6 +527,21 @@ ul { list-style: none; }
 
 .cert-badge svg { color: var(--brand-primary); width: 20px; height: 20px; }
 
+/* Gov Cards for dark sections */
+.gov-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+}
+.gov-card:hover {
+    border-color: var(--brand-accent);
+    background: rgba(255,255,255,0.08);
+    transform: translateY(-5px);
+}
+
 /* ============================================
    CONTACT SECTION
    ============================================ */
@@ -601,7 +616,25 @@ ul { list-style: none; }
     font-size: 0.95rem;
 }
 
-.footer__contact-item svg { color: var(--brand-primary); }
+.footer__contact-item svg { color: var(--brand-accent); }
+
+.footer__certs {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.footer__cert {
+    background: rgba(255,255,255,0.1);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 2px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 1px solid rgba(255,255,255,0.15);
+}
 
 .footer__bottom {
     padding-top: 2rem;
