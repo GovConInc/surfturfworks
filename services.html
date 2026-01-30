@@ -80,6 +80,54 @@
         .naics-table tr:hover td {
             background: rgba(255,255,255,0.05);
         }
+        
+        /* Mobile Styles for Services Page */
+        @media (max-width: 768px) {
+            .service-detail-card {
+                padding: 1.5rem;
+            }
+            
+            .naics-table th,
+            .naics-table td {
+                padding: 0.75rem 0.5rem;
+                font-size: 0.85rem;
+            }
+            
+            .cert-badge {
+                font-size: 0.7rem;
+                padding: 0.4rem 0.75rem;
+            }
+            
+            .gov-card {
+                padding: 1rem !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .service-detail-card {
+                padding: 1.25rem;
+            }
+            
+            .service-detail-card li {
+                font-size: 0.9rem;
+            }
+            
+            /* Stack cert badges */
+            .cert-badge-group {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+            }
+            
+            /* CTA buttons */
+            .cta-buttons {
+                flex-direction: column !important;
+                width: 100%;
+            }
+            
+            .cta-buttons .btn {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -289,7 +337,7 @@
             <p style="color: var(--text-secondary); margin-bottom: 2rem;">
                 Whether you need a government-compliant proposal or a commercial bid, we are ready.
             </p>
-            <div style="display: flex; gap: 1rem; justify-content: center;">
+            <div class="cta-buttons" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
                 <a href="contact.html" class="btn btn--primary">Contact Us</a>
                 <a href="tel:3364624403" class="btn btn--outline">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>

@@ -12,6 +12,36 @@
     
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" type="image/png" href="images/brads-logo.png">
+    
+    <style>
+        /* Contact Page Mobile Styles */
+        @media (max-width: 968px) {
+            .contact-grid {
+                grid-template-columns: 1fr !important;
+            }
+            
+            .contact-sidebar {
+                position: relative !important;
+                top: auto !important;
+                margin-top: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .contact-sidebar {
+                padding: 1.5rem !important;
+            }
+            
+            .gov-ids-grid {
+                grid-template-columns: 1fr !important;
+            }
+            
+            /* Map height on mobile */
+            .map-section {
+                height: 300px !important;
+            }
+        }
+    </style>
 </head>
 <body>
 

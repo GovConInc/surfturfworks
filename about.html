@@ -12,6 +12,37 @@
     
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" type="image/png" href="images/brads-logo.png">
+    
+    <style>
+        /* About Page Mobile Styles */
+        @media (max-width: 768px) {
+            /* Floating stat card on about page */
+            .floating-card {
+                position: relative !important;
+                bottom: auto !important;
+                left: auto !important;
+                margin-top: 1.5rem;
+                max-width: 100% !important;
+            }
+            
+            /* Service area list */
+            .service-area-list {
+                grid-template-columns: 1fr !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            /* Quote box */
+            .quote-box {
+                padding-left: 1rem !important;
+            }
+            
+            /* Team card adjustments */
+            .team-card__bio {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
