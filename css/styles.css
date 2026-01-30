@@ -4,29 +4,30 @@
    ============================================ */
 
 :root {
-    /* --- BRAND COLORS (Warm, Blue, Professional) --- */
+    /* --- BRAND COLORS (Navy + Gold, Professional) --- */
     /* Deep Professional Navy - Reliable, Corporate, Strong */
     --brand-primary: #0F3460; 
     
     /* Darker Navy for Contrast */
     --brand-dark: #0a213a; 
     
-    /* Warm Amber/Gold - Energy, Construction, Visibility ("Warmth") */
+    /* Warm Amber/Gold - Energy, Construction, Visibility */
     --brand-accent: #FFB703;
     
     /* Secondary Blue - for variation */
-    --brand-secondary: #533483; /* Slightly purple-ish blue or keep it slate? Let's go Slate Blue */
+    --brand-secondary: #1a4a7a;
     --brand-slate: #334e68;
 
     /* --- NEUTRALS --- */
     --surface-white: #ffffff;
-    --surface-off-white: #f8f9fa; /* slightly cooler crisp white */
+    --surface-off-white: #f8f9fa;
     --surface-dark: #16213e;
     
-    --text-primary: #1a202c; /* Very dark slate */
-    --text-secondary: #4a5568; 
-    --text-light: #f7fafc;
-    --text-muted: #a0aec0;
+    /* TEXT COLORS - High Contrast */
+    --text-primary: #1a202c; /* Very dark slate for light backgrounds */
+    --text-secondary: #4a5568; /* Medium gray for body text on light backgrounds */
+    --text-light: #f7fafc; /* Light text for dark backgrounds */
+    --text-muted: #718096; /* Muted text, still readable */
     
     /* --- UI ELEMENTS --- */
     --border-light: #e2e8f0;
@@ -73,7 +74,7 @@ html {
 body {
     font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.7;
-    color: var(--text-secondary);
+    color: var(--text-primary);
     background-color: var(--surface-white);
     overflow-x: hidden;
 }
@@ -157,7 +158,7 @@ ul { list-style: none; }
     color: var(--text-light);
 }
 .section--dark h1, .section--dark h2, .section--dark h3 { color: var(--surface-white); }
-.section--dark p { color: var(--text-light); opacity: 0.9; }
+.section--dark p { color: rgba(255, 255, 255, 0.9); }
 
 .section--light { background-color: var(--surface-off-white); }
 
@@ -419,7 +420,7 @@ ul { list-style: none; }
 
 .stat__label {
     font-size: 0.85rem;
-    color: var(--text-secondary);
+    color: var(--text-muted);
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 1px;
@@ -510,7 +511,7 @@ ul { list-style: none; }
 .service-card__icon svg { width: 32px; height: 32px; }
 
 .service-card__title { font-size: 1.5rem; margin-bottom: 1rem; color: var(--brand-dark); }
-.service-card p { font-size: 1rem; color: var(--text-secondary); line-height: 1.6; }
+.service-card p { font-size: 1rem; color: var(--text-secondary); line-height: 1.7; }
 
 /* ============================================
    PROJECT CARDS
@@ -633,13 +634,13 @@ ul { list-style: none; }
 .footer__logo { margin-bottom: 1.5rem; }
 .footer__logo img { height: 40px; filter: brightness(0) invert(1); } /* Force logo white */
 
-.footer__about { color: var(--text-muted); font-size: 0.95rem; }
+.footer__about { color: rgba(255, 255, 255, 0.8); font-size: 0.95rem; }
 
 .footer__title { color: white; margin-bottom: 1.5rem; font-size: 1.1rem; }
 
 .footer__link {
     display: block;
-    color: var(--text-muted);
+    color: rgba(255, 255, 255, 0.75);
     margin-bottom: 0.75rem;
     font-size: 0.95rem;
 }
@@ -650,7 +651,7 @@ ul { list-style: none; }
     display: flex;
     gap: 1rem;
     margin-bottom: 1rem;
-    color: var(--text-muted);
+    color: rgba(255, 255, 255, 0.8);
     font-size: 0.95rem;
 }
 
@@ -684,7 +685,7 @@ ul { list-style: none; }
     gap: 1rem;
 }
 
-.footer__copyright { color: var(--text-muted); font-size: 0.85rem; }
+.footer__copyright { color: rgba(255, 255, 255, 0.6); font-size: 0.85rem; }
 
 /* ============================================
    RESPONSIVE - TABLET (max-width: 968px)
@@ -1188,7 +1189,7 @@ html, body {
 .team-card__bio {
     font-size: 0.95rem;
     color: var(--text-secondary);
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 /* Footer Grid Base Styles */
