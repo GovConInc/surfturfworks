@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="images/brads-logo.png">
     
     <style>
         /* Hero Specifics */
@@ -26,7 +27,8 @@
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(135deg, rgba(13, 43, 70, 0.95) 0%, rgba(21, 101, 192, 0.6) 100%);
+            /* Deep, professional Navy gradient that allows the cityscape to peek through */
+            background: linear-gradient(135deg, rgba(15, 52, 96, 0.96) 0%, rgba(15, 52, 96, 0.75) 100%);
             z-index: 1;
         }
 
@@ -34,45 +36,47 @@
         .case-study {
             position: relative;
             overflow: hidden;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-xl);
+            border-radius: var(--radius-sm); /* Sharper corners */
+            box-shadow: var(--shadow-lg);
         }
         
         .case-study__badge {
             background: var(--brand-accent);
             color: var(--brand-dark);
-            padding: 0.25rem 0.75rem;
-            border-radius: 4px;
+            padding: 0.35rem 1rem;
+            border-radius: 2px;
             font-weight: 700;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
+            letter-spacing: 1.5px;
             display: inline-block;
             margin-bottom: 1rem;
         }
 
         /* Gov Con Specifics */
         .gov-card {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08); /* Subtle border */
             backdrop-filter: blur(10px);
             padding: 2rem;
-            border-radius: var(--radius-md);
+            border-radius: var(--radius-sm);
             transition: var(--transition);
         }
         .gov-card:hover {
             border-color: var(--brand-accent);
+            background: rgba(255,255,255,0.06);
             transform: translateY(-5px);
         }
     </style>
     
-    <link rel="icon" type="image/x-icon" href="images/400dpiLogo___JPG_LOGO_2.jpg">
+
 </head>
 <body>
 
     <nav class="navbar">
         <div class="navbar__inner container">
             <a href="index.html" class="navbar__logo">
-                <img src="1.png" alt="Brad's Electrical Construction Logo" style="height: 60px;">
+                <img src="images/brads-logo.png" alt="Brad's Electrical Construction Logo" style="height: 60px;">
             </a>
             
             <div class="navbar__menu">
@@ -315,7 +319,7 @@
             <div class="footer__grid">
                 <div>
                     <div class="footer__logo">
-                        <img src="1.png" alt="Brad's Electrical" style="height: 50px; filter: brightness(0) invert(1);">
+                        <img src="images/brads-logo.png" alt="Brad's Electrical" style="height: 50px; filter: brightness(0) invert(1);">
                     </div>
                     <p class="footer__about">
                         Premier electrical contractor serving commercial and government clients across North Carolina since 2018.
