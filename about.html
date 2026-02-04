@@ -8,10 +8,75 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" type="image/png" href="images/brads-logo.png">
+    
+    <style>
+        /* Inline specific tweaks for this page to orchestrate layout perfectly */
+        .serif-font { font-family: 'Playfair Display', serif; }
+        
+        .intro-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        @media (max-width: 900px) {
+            .intro-split { grid-template-columns: 1fr; }
+        }
+        
+        .intro-image {
+            position: relative;
+        }
+        
+        .intro-image img {
+            border-radius: 8px;
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .intro-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 100px;
+            height: 100px;
+            border-top: 4px solid var(--accent);
+            border-left: 4px solid var(--accent);
+            z-index: -1;
+        }
+
+        .credential-bar {
+            background: var(--gray-900);
+            padding: 2rem 0;
+            color: var(--white);
+            margin-top: -3rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .credential-list {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .credential-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+        
+        .credential-item span { color: var(--accent); }
+    </style>
 </head>
 <body>
 
@@ -39,176 +104,172 @@
 
     <!-- PAGE HERO -->
     <section class="page-hero">
-        <div class="page-hero__content">
-            <h1 class="page-hero__title">Our <span>Story</span></h1>
-            <p class="page-hero__subtitle">
-                A family-built business founded on military precision, field expertise, and a commitment to excellence.
-            </p>
-        </div>
-    </section>
-
-    <!-- COMPANY INTRO -->
-    <section class="section">
         <div class="container">
-            <div class="about-intro">
-                <div class="about-intro__image">
-                    <img src="images/electrician1696757_1280.jpg" alt="Electrical Work">
-                </div>
-                <div>
-                    <span class="section-header__label">Who We Are</span>
-                    <h2>Built on Experience.<br>Driven by Excellence.</h2>
-                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--gray-600);">
-                        Brad's Electrical Construction Company is a certified <strong>Woman-Owned Small Business (WOSB)</strong> serving commercial, industrial, and government clients across North Carolina.
-                    </p>
-                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--gray-600);">
-                        Founded by the dynamic team of <strong>Brooke Oast</strong> and <strong>Brad Oast</strong>, we bring together executive leadership and hands-on field expertise to deliver electrical solutions that exceed expectations.
-                    </p>
-                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--gray-600);">
-                        With projects spanning organizations like Amazon, Cummins, Siemens, Winston-Salem Government, and UNC — we've earned our reputation as North Carolina's go-to electrical contractor for complex, mission-critical work.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- MISSION SECTION -->
-    <section class="mission">
-        <div class="container">
-            <div class="mission__content">
-                <div class="mission__acronym">
-                    <div class="mission__letter">B</div>
-                    <div class="mission__letter">R</div>
-                    <div class="mission__letter">A</div>
-                    <div class="mission__letter">D</div>
-                </div>
-                
-                <div class="mission__words">
-                    <span class="mission__word"><span>B</span>e Reliable</span>
-                    <span class="mission__word"><span>R</span>esponsive</span>
-                    <span class="mission__word"><span>A</span>nd</span>
-                    <span class="mission__word"><span>D</span>emonstrate Excellence</span>
-                </div>
-                
-                <h2 class="mission__tagline">Thinking Electric? Think Brad.</h2>
-                <p class="mission__text">
-                    We provide each customer with our commitment to being just as passionate about the job as you are.
-                    Every project gets our full attention, our best work, and our dedication to getting it done right.
+            <div class="page-hero__content">
+                <span class="hero__badge">Since 2004</span>
+                <h1 class="page-hero__title serif-font" style="font-size: 4rem;">Our Story</h1>
+                <p class="page-hero__subtitle" style="max-width: 700px; margin: 0 auto; line-height: 1.8;">
+                    Founded on the principles of military precision and field expertise. We are a family-owned business dedicated to powering North Carolina's future.
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- LEADERSHIP TEAM -->
-    <section class="section bg-light">
+    <!-- CREDENTIAL STRIP -->
+    <div class="credential-bar">
+        <div class="container credential-list">
+            <div class="credential-item"><span>•</span> Woman-Owned Small Business</div>
+            <div class="credential-item"><span>•</span> NC License #32448-U</div>
+            <div class="credential-item"><span>•</span> GSA Schedule Holder</div>
+            <div class="credential-item"><span>•</span> UL Listed Panel Shop</div>
+        </div>
+    </div>
+
+    <!-- COMPANY INTRO -->
+    <section class="section" style="padding-top: 8rem;">
+        <div class="container">
+            <div class="intro-split">
+                <div class="intro-content">
+                    <span class="section-header__label">Who We Are</span>
+                    <h2 class="serif-font" style="margin-bottom: 2rem; font-size: 2.5rem; line-height: 1.2;">Built on Experience.<br>Driven by Excellence.</h2>
+                    <p style="font-size: 1.15rem; line-height: 1.8; color: var(--gray-600); margin-bottom: 1.5rem;">
+                        Brad's Electrical Construction Company is a certified <strong>Woman-Owned Small Business (WOSB)</strong> serving commercial, industrial, and government clients across North Carolina.
+                    </p>
+                    <p style="font-size: 1.15rem; line-height: 1.8; color: var(--gray-600);">
+                        What began as a vision to combine high-level management with master-level craftsmanship has grown into one of the region's most trusted electrical contractors. From complex government facilities to large-scale industrial plants, we bring the same level of dedication and detail to every connection we make.
+                    </p>
+                </div>
+                <div class="intro-image">
+                    <img src="images/electrician1696757_1280.jpg" alt="Brad's Electrical Team at Work" style="width: 100%; height: auto; object-fit: cover; aspect-ratio: 4/3;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LEADERSHIP / EXECUTIVE PROFILE -->
+    <section class="executive-section bg-light">
         <div class="container">
             <div class="section-header">
                 <span class="section-header__label">Leadership</span>
-                <h2 class="section-header__title">Meet the Team</h2>
+                <h2 class="section-header__title serif-font">Executive Leadership</h2>
                 <p class="section-header__text">
-                    The perfect combination of executive vision and field expertise.
+                    The synergy of administrative vision and technical mastery.
                 </p>
             </div>
             
-            <div class="grid grid-2" style="max-width: 900px; margin: 0 auto;">
-                <!-- Brooke -->
-                <div class="team-card">
-                    <div class="team-card__avatar">BO</div>
-                    <h3 class="team-card__name">Brooke Oast</h3>
-                    <p class="team-card__role">President & Owner</p>
-                    <p class="team-card__bio">
-                        As the founder and leader of Brad's Electrical, Brooke oversees all executive, administrative, accounting, and HR operations. She provides the "big picture" vision for the business while managing day-to-day scheduling for every project.
-                    </p>
-                    <p class="team-card__bio" style="margin-top: 1rem;">
-                        Brooke wears many hats — she's the visionary, the decision-maker, and the person who keeps the team organized, paid, and focused on customer satisfaction. Her leadership is the magnet that draws our team together.
-                    </p>
+            <div style="max-width: 1000px; margin: 0 auto;">
+                <!-- Brooke Profile -->
+                <div class="executive-card">
+                    <div class="executive-card__image-col">
+                        <div class="executive-card__avatar">B</div>
+                    </div>
+                    <div class="executive-card__content">
+                        <div class="executive-card__header">
+                            <div>
+                                <h3 class="executive-card__name serif-font">Brooke Oast</h3>
+                                <div class="executive-card__role">President & Owner</div>
+                            </div>
+                            <img src="images/brads-logo.png" alt="Logo" style="height: 30px; opacity: 0.3; filter: grayscale(100%);">
+                        </div>
+                        <p class="executive-card__bio">
+                            As the President of Brad's Electrical, Brooke is the heartbeat of our organization. She oversees all executive, administrative, accounting, and HR operations, ensuring the business runs with precision and purpose.
+                        </p>
+                        <p class="executive-card__bio" style="margin-top: 1rem;">
+                            Brooke provides the "big picture" direction while meticulously managing the day-to-day schedules that keep our projects on track. She wears many hats—envisionary, decision-maker, and leader—magnetizing our team around a shared goal of excellence.
+                        </p>
+                    </div>
                 </div>
                 
-                <!-- Brad -->
-                <div class="team-card">
-                    <div class="team-card__avatar">BO</div>
-                    <h3 class="team-card__name">Brad Oast</h3>
-                    <p class="team-card__role">Vice President & Master Electrician</p>
-                    <p class="team-card__bio">
-                        Brad holds a <strong>Universal Master Electrician License</strong> in North Carolina and brings over <strong>20 years of hands-on experience</strong> to every project. He started as an electrician's helper at just 14 years old — and the passion never left.
-                    </p>
-                    <p class="team-card__bio" style="margin-top: 1rem;">
-                        His dedication to always learning more, doing more, and being the best has built a team of <strong>30+ full-time employees</strong> ranging from master electricians to apprentices. Brad's experience, passion, and southern charm make him the electrical "guy" you want on your job.
-                    </p>
+                <!-- Brad Profile -->
+                <div class="executive-card">
+                    <div class="executive-card__image-col">
+                        <div class="executive-card__avatar">B</div>
+                    </div>
+                    <div class="executive-card__content">
+                        <div class="executive-card__header">
+                            <div>
+                                <h3 class="executive-card__name serif-font">Brad Oast</h3>
+                                <div class="executive-card__role">Vice President</div>
+                            </div>
+                            <img src="images/brads-logo.png" alt="Logo" style="height: 30px; opacity: 0.3; filter: grayscale(100%);">
+                        </div>
+                        <p class="executive-card__bio">
+                            Brad serves as our Vice President and technical authority, holding a <strong>Universal Master Electrician License</strong> in North Carolina. His journey began at age 14 as an electrician's helper, sparking a lifelong passion for the trade.
+                        </p>
+                        <p class="executive-card__bio" style="margin-top: 1rem;">
+                            With over 20 years of hands-on experience, Brad combines technical expertise with a distinctly Southern charm that puts clients at ease. He has built and mentored a team of over 30 professionals, instilling in them the drive to "always learn more, do more, and be the best."
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- WHY CHOOSE US -->
+    <!-- REFINED MISSION SECTION -->
+    <section class="mission-refined">
+        <div class="container">
+            <h2 class="serif-font" style="font-size: 3rem; margin-bottom: 2rem;">Thinking Electric? <span style="color: var(--accent);">Think Brad.</span></h2>
+            <p style="font-size: 1.25rem; max-width: 800px; margin: 0 auto; color: rgba(255,255,255,0.9); line-height: 1.6;">
+                Our mission is simple: To provide every customer with a commitment to their project that matches their own.
+            </p>
+            
+            <div class="mission-values-grid">
+                <div class="mission-value">
+                    <span class="mission-value__letter">B</span>
+                    <h3 class="mission-value__title">Bringing</h3>
+                    <p class="mission-value__desc">The expertise, the manpower, and the dedication needed to handle complex projects from start to finish.</p>
+                </div>
+                <div class="mission-value">
+                    <span class="mission-value__letter">R</span>
+                    <h3 class="mission-value__title">Reach</h3>
+                    <p class="mission-value__desc">Extending our services across commercial, industrial, and government sectors throughout North Carolina.</p>
+                </div>
+                <div class="mission-value">
+                    <span class="mission-value__letter">A</span>
+                    <h3 class="mission-value__title">And</h3>
+                    <p class="mission-value__desc">Connecting every piece of the puzzle—management, field work, safety, and client satisfaction.</p>
+                </div>
+                <div class="mission-value">
+                    <span class="mission-value__letter">DS</span>
+                    <h3 class="mission-value__title">Delivering Sparks</h3>
+                    <p class="mission-value__desc">Providing the essential energy that powers businesses, campuses, and communities forward.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US - REDESIGNED GRID -->
     <section class="section">
         <div class="container">
             <div class="section-header">
-                <span class="section-header__label">Why Brad's Electrical</span>
-                <h2 class="section-header__title">What Sets Us Apart</h2>
+                <span class="section-header__label">Experience The Difference</span>
+                <h2 class="section-header__title serif-font">Why Brad's?</h2>
             </div>
             
             <div class="grid grid-3">
-                <div class="card">
-                    <div class="card__icon">
+                <div class="card" style="border: none; box-shadow: none; background: var(--gray-50);">
+                    <div class="card__icon" style="background: transparent; color: var(--primary);">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
                     </div>
                     <h3 class="card__title">WOSB Certified</h3>
-                    <p class="card__text">Woman-Owned Small Business certification opens doors for federal contracting while delivering the same quality and professionalism.</p>
+                    <p class="card__text">Federally certified Woman-Owned Small Business, bringing diversity and excellence to government contracting.</p>
                 </div>
                 
-                <div class="card">
-                    <div class="card__icon">
+                <div class="card" style="border: none; box-shadow: none; background: var(--gray-50);">
+                    <div class="card__icon" style="background: transparent; color: var(--primary);">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
                     </div>
-                    <h3 class="card__title">20+ Years Experience</h3>
-                    <p class="card__text">Brad started at 14 and never stopped learning. Two decades of field experience means we've seen it all and can handle anything.</p>
+                    <h3 class="card__title">20+ Years Legacy</h3>
+                    <p class="card__text">Two decades of hands-on field experience. We've encountered every challenge and built the solutions.</p>
                 </div>
                 
-                <div class="card">
-                    <div class="card__icon">
+                <div class="card" style="border: none; box-shadow: none; background: var(--gray-50);">
+                    <div class="card__icon" style="background: transparent; color: var(--primary);">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
                     </div>
-                    <h3 class="card__title">30+ Team Members</h3>
-                    <p class="card__text">From master electricians to apprentices, our growing team has the depth to take on large-scale commercial and industrial projects.</p>
+                    <h3 class="card__title">Strength in Numbers</h3>
+                    <p class="card__text">A robust team of 30+ full-time employees, from apprentices to masters, ready to deploy.</p>
                 </div>
-                
-                <div class="card">
-                    <div class="card__icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
-                    </div>
-                    <h3 class="card__title">GSA Schedule Holder</h3>
-                    <p class="card__text">Pre-approved for federal procurement. Our GSA Schedule makes government contracting streamlined and compliant.</p>
-                </div>
-                
-                <div class="card">
-                    <div class="card__icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-                    </div>
-                    <h3 class="card__title">NC Unlimited License</h3>
-                    <p class="card__text">License #32448-U allows us to take on projects of any size or complexity across North Carolina — no job too big.</p>
-                </div>
-                
-                <div class="card">
-                    <div class="card__icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
-                    </div>
-                    <h3 class="card__title">Passion-Driven</h3>
-                    <p class="card__text">We're as passionate about your project as you are. That mindset drives everything we do — from planning to final inspection.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="cta">
-        <div class="container">
-            <h2 class="cta__title">Ready to Work Together?</h2>
-            <p class="cta__text">
-                Let's discuss your project and show you why organizations across North Carolina trust Brad's Electrical.
-            </p>
-            <div class="cta__actions">
-                <a href="contact.html" class="btn btn--primary btn--lg">Contact Us</a>
-                <a href="projects.html" class="btn btn--outline-light btn--lg">View Our Work</a>
             </div>
         </div>
     </section>
@@ -222,7 +283,7 @@
                         <img src="images/brads-logo.png" alt="Brad's Electrical">
                     </div>
                     <p class="footer__about">
-                        Premier electrical contractor serving commercial and government clients across North Carolina. Woman-Owned Small Business with 20+ years of field experience.
+                        Premier electrical contractor serving commercial and government clients across North Carolina.
                     </p>
                 </div>
                 
@@ -236,10 +297,9 @@
                 
                 <div>
                     <h4 class="footer__title">Services</h4>
-                    <a href="projects.html" class="footer__link">Medium Voltage</a>
-                    <a href="projects.html" class="footer__link">Generator Systems</a>
-                    <a href="projects.html" class="footer__link">Facilities Management</a>
-                    <a href="projects.html" class="footer__link">Government Contracting</a>
+                    <a href="projects.html" class="footer__link">Commercial</a>
+                    <a href="projects.html" class="footer__link">Industrial</a>
+                    <a href="projects.html" class="footer__link">Government</a>
                 </div>
                 
                 <div>
@@ -252,10 +312,6 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                         <span>(336) 462-4403</span>
                     </div>
-                    <div class="footer__contact-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
-                        <span>janet@bradselec.com</span>
-                    </div>
                 </div>
             </div>
             
@@ -263,8 +319,6 @@
                 <p class="footer__copyright">© 2026 Brad's Electrical Construction Company, LLC. All rights reserved.</p>
                 <div class="footer__certs">
                     <span class="footer__cert">WOSB</span>
-                    <span class="footer__cert">SDB</span>
-                    <span class="footer__cert">NC HUB</span>
                     <span class="footer__cert">GSA</span>
                 </div>
             </div>
