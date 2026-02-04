@@ -4,30 +4,30 @@
    ============================================ */
 
 :root {
-    /* --- BRAND COLORS (Navy + Gold, Professional) --- */
-    /* Deep Professional Navy - Reliable, Corporate, Strong */
-    --brand-primary: #0F3460; 
+    /* --- BRAND COLORS (Fresh Blue + Gold, Modern Professional) --- */
+    /* Clean Professional Blue - Modern, clean, trustworthy */
+    --brand-primary: #1a5f9f; 
     
-    /* Darker Navy for Contrast */
-    --brand-dark: #0a213a; 
+    /* Deep Navy for Dark Sections */
+    --brand-dark: #0d2a47; 
     
-    /* Warm Amber/Gold - Energy, Construction, Visibility */
-    --brand-accent: #FFB703;
+    /* Bright Gold/Amber - Energy, attention, visibility */
+    --brand-accent: #FFD54F;
     
-    /* Secondary Blue - for variation */
-    --brand-secondary: #1a4a7a;
-    --brand-slate: #334e68;
+    /* Secondary Blue - for variation and light sections */
+    --brand-secondary: #4a90d9;
+    --brand-slate: #5a7ba5;
 
     /* --- NEUTRALS --- */
     --surface-white: #ffffff;
-    --surface-off-white: #f8f9fa;
-    --surface-dark: #16213e;
+    --surface-off-white: #f5f7fa;
+    --surface-dark: #1a2f45;
     
     /* TEXT COLORS - High Contrast */
-    --text-primary: #1a202c; /* Very dark slate for light backgrounds */
-    --text-secondary: #4a5568; /* Medium gray for body text on light backgrounds */
-    --text-light: #f7fafc; /* Light text for dark backgrounds */
-    --text-muted: #718096; /* Muted text, still readable */
+    --text-primary: #0d1b2a; /* Very dark blue for light backgrounds */
+    --text-secondary: #3d4f62; /* Medium slate for body text on light backgrounds */
+    --text-light: #f0f4f8; /* Light text for dark backgrounds */
+    --text-muted: #6b7d93; /* Muted text, still readable */
     
     /* --- UI ELEMENTS --- */
     --border-light: #e2e8f0;
@@ -99,7 +99,7 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
 ul { list-style: none; }
 
 /* Highlight Text Class */
-.text-accent { color: var(--brand-primary); }
+.text-accent { color: #1a5f9f; }
 .text-white { color: var(--surface-white); }
 
 /* ============================================
@@ -154,11 +154,11 @@ ul { list-style: none; }
 .section--sm { padding: var(--spacing-lg) 0; }
 
 .section--dark {
-    background-color: var(--brand-dark);
+    background-color: #1a3a52;
     color: var(--text-light);
 }
-.section--dark h1, .section--dark h2, .section--dark h3 { color: var(--surface-white); }
-.section--dark p { color: rgba(255, 255, 255, 0.9); }
+.section--dark h1, .section--dark h2, .section--dark h3 { color: #FFD54F; }
+.section--dark p { color: #e8f0f7; }
 
 .section--light { background-color: var(--surface-off-white); }
 
@@ -221,16 +221,16 @@ ul { list-style: none; }
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--brand-primary);
+    background: #1a5f9f;
     transition: var(--transition);
 }
 
-.navbar__link:hover { color: var(--brand-primary); }
+.navbar__link:hover { color: #1a5f9f; }
 .navbar__link:hover::after, .navbar__link.active::after { width: 100%; }
 
 .navbar__cta {
-    background-color: var(--brand-accent);
-    color: var(--brand-dark);
+    background-color: #FFD54F;
+    color: #0d2a47;
     padding: 0.75rem 1.5rem;
     border-radius: var(--radius-sm);
     font-weight: 700;
@@ -240,10 +240,10 @@ ul { list-style: none; }
 }
 
 .navbar__cta:hover {
-    background-color: var(--brand-dark);
-    color: white;
+    background-color: #FFE082;
+    color: #0d2a47;
     transform: translateY(-2px);
-    box-shadow: var(--shadow-accent);
+    box-shadow: 0 4px 14px 0 rgba(255, 213, 79, 0.5);
 }
 
 .navbar__toggle {
@@ -260,7 +260,7 @@ ul { list-style: none; }
     display: flex;
     align-items: center;
     padding-top: var(--header-height);
-    background: var(--brand-dark);
+    background: linear-gradient(135deg, #1a3a52 0%, #0d2a47 100%);
     overflow: hidden;
 }
 
@@ -289,7 +289,7 @@ ul { list-style: none; }
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(4px);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    color: var(--brand-accent);
+    color: #FFD54F;
     padding: 0.5rem 1rem;
     border-radius: 50px;
     font-size: 0.85rem;
@@ -307,10 +307,9 @@ ul { list-style: none; }
 }
 
 .hero__title span {
-    color: var(--brand-accent); /* Make it solid Amber by default for impact */
+    color: #FFD54F;
     position: relative;
-    /* Optional glow */
-    text-shadow: 0 0 20px rgba(255, 183, 3, 0.3);
+    text-shadow: 0 0 20px rgba(255, 213, 79, 0.4);
 }
 
 .hero__subtitle {
@@ -346,43 +345,43 @@ ul { list-style: none; }
     border: 1px solid transparent; /* Sharper border */
 }
 
-/* Primary Action: Warm Amber */
+/* Primary Action: Bright Gold */
 .btn--primary {
-    background-color: var(--brand-accent);
-    color: var(--brand-dark);
-    border-color: var(--brand-accent);
+    background-color: #FFD54F;
+    color: #0d2a47;
+    border-color: #FFD54F;
 }
 
 .btn--primary:hover {
-    background-color: #ffc107; /* Slightly brighter */
-    border-color: #ffc107;
-    color: var(--brand-dark);
-    box-shadow: var(--shadow-accent);
+    background-color: #FFE082;
+    border-color: #FFE082;
+    color: #0d2a47;
+    box-shadow: 0 4px 14px 0 rgba(255, 213, 79, 0.5);
     transform: translateY(-2px);
 }
 
 /* Secondary Action: Glassy/Ghost */
 .btn--secondary {
-    background: rgba(255,255,255,0.05);
+    background: rgba(255,255,255,0.15);
     backdrop-filter: blur(4px);
     color: white;
-    border-color: rgba(255,255,255,0.2);
+    border-color: rgba(255,255,255,0.3);
 }
 
 .btn--secondary:hover {
-    background: rgba(255,255,255,0.1);
-    color: var(--brand-accent);
-    border-color: var(--brand-accent);
+    background: rgba(255,255,255,0.25);
+    color: #FFD54F;
+    border-color: #FFD54F;
 }
 
 .btn--outline {
     background: transparent;
-    border-color: var(--brand-primary);
-    color: var(--brand-primary);
+    border-color: #1a5f9f;
+    color: #1a5f9f;
 }
 
 .btn--outline:hover {
-    background: var(--brand-primary);
+    background: #1a5f9f;
     color: white;
 }
 
@@ -404,7 +403,7 @@ ul { list-style: none; }
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
-    border-top: 4px solid var(--brand-accent); /* Amber top border */
+    border-top: 4px solid #FFD54F;
 }
 
 .stat { text-align: center; border-right: 1px solid var(--border-light); }
@@ -485,7 +484,7 @@ ul { list-style: none; }
 }
 
 .service-card:hover {
-    border-color: var(--brand-accent);
+    border-color: #FFD54F;
     transform: translateY(-5px);
     box-shadow: var(--shadow-lg);
 }
@@ -499,18 +498,18 @@ ul { list-style: none; }
     align-items: center;
     justify-content: center;
     margin-bottom: 1.5rem;
-    color: var(--brand-primary); /* Keep icons Blue/Professional */
+    color: #1a5f9f;
     transition: var(--transition);
 }
 
 .service-card:hover .service-card__icon {
-    background: var(--brand-dark);
-    color: var(--brand-accent); /* Icon glows Amber on hover */
+    background: #1a3a52;
+    color: #FFD54F;
 }
 
 .service-card__icon svg { width: 32px; height: 32px; }
 
-.service-card__title { font-size: 1.5rem; margin-bottom: 1rem; color: var(--brand-dark); }
+.service-card__title { font-size: 1.5rem; margin-bottom: 1rem; color: #0d2a47; }
 .service-card p { font-size: 1rem; color: var(--text-secondary); line-height: 1.7; }
 
 /* ============================================
@@ -545,7 +544,7 @@ ul { list-style: none; }
 }
 
 .project-card__title { color: white; margin-bottom: 0.25rem; font-size: 1.25rem; }
-.project-card__value { color: var(--brand-accent); font-weight: 700; font-size: 0.9rem; text-transform: uppercase; }
+.project-card__value { color: #FFD54F; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; }
 
 /* ============================================
    CERTIFICATIONS & BADGES
@@ -564,20 +563,20 @@ ul { list-style: none; }
     box-shadow: var(--shadow-sm);
 }
 
-.cert-badge svg { color: var(--brand-primary); width: 20px; height: 20px; }
+.cert-badge svg { color: #1a5f9f; width: 20px; height: 20px; }
 
 /* Gov Cards for dark sections */
 .gov-card {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255, 213, 79, 0.08);
+    border: 1px solid rgba(255, 213, 79, 0.2);
     backdrop-filter: blur(10px);
     padding: 2rem;
     border-radius: var(--radius-sm);
     transition: var(--transition);
 }
 .gov-card:hover {
-    border-color: var(--brand-accent);
-    background: rgba(255,255,255,0.08);
+    border-color: #FFD54F;
+    background: rgba(255, 213, 79, 0.12);
     transform: translateY(-5px);
 }
 
@@ -598,7 +597,7 @@ ul { list-style: none; }
     margin-bottom: 0.5rem;
     font-weight: 600;
     font-size: 0.9rem;
-    color: var(--brand-dark);
+    color: #0d2a47;
 }
 
 .form-input, .form-textarea, .form-select {
@@ -614,19 +613,19 @@ ul { list-style: none; }
 
 .form-input:focus, .form-textarea:focus, .form-select:focus {
     outline: none;
-    border-color: var(--brand-primary);
+    border-color: #1a5f9f;
     background: white;
-    box-shadow: 0 0 0 3px rgba(21, 101, 192, 0.1);
+    box-shadow: 0 0 0 3px rgba(26, 95, 159, 0.1);
 }
 
 /* ============================================
    FOOTER
    ============================================ */
 .footer {
-    background-color: var(--brand-dark);
+    background-color: #0d2a47;
     color: white;
     padding: var(--spacing-lg) 0 2rem;
-    border-top: 4px solid var(--brand-accent);
+    border-top: 4px solid #FFD54F;
 }
 
 .footer__grid { margin-bottom: 4rem; }
@@ -645,7 +644,7 @@ ul { list-style: none; }
     font-size: 0.95rem;
 }
 
-.footer__link:hover { color: var(--brand-accent); transform: translateX(5px); }
+.footer__link:hover { color: #FFD54F; transform: translateX(5px); }
 
 .footer__contact-item {
     display: flex;
@@ -655,7 +654,7 @@ ul { list-style: none; }
     font-size: 0.95rem;
 }
 
-.footer__contact-item svg { color: var(--brand-accent); }
+.footer__contact-item svg { color: #FFD54F; }
 
 .footer__certs {
     display: flex;
@@ -711,7 +710,7 @@ ul { list-style: none; }
         display: block;
         width: 100%;
         height: 3px;
-        background: var(--brand-dark);
+        background: #0d2a47;
         position: absolute;
         border-radius: 2px;
         transition: var(--transition);
@@ -1120,9 +1119,7 @@ html, body {
 .about-hero {
     position: relative;
     padding: 180px 0 100px;
-    background: var(--brand-dark);
-    /* Deep Navy Overlay */
-    background-image: linear-gradient(135deg, rgba(15, 52, 96, 0.95) 0%, rgba(10, 33, 58, 0.8) 100%), url('../images/electrician1696757_1280.jpg');
+    background: linear-gradient(135deg, rgba(26, 58, 82, 0.95) 0%, rgba(13, 42, 71, 0.9) 100%), url('../images/electrician1696757_1280.jpg');
     background-size: cover;
     background-position: center;
     color: white;
@@ -1150,7 +1147,7 @@ html, body {
 }
 
 .team-card:hover {
-    border-color: var(--brand-accent);
+    border-color: #FFD54F;
     transform: translateY(-5px);
     box-shadow: var(--shadow-lg);
 }
@@ -1159,26 +1156,26 @@ html, body {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    background: var(--brand-dark);
+    background: #1a3a52;
     margin: 0 auto 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--brand-accent);
+    color: #FFD54F;
     border: 4px solid var(--surface-off-white);
     box-shadow: var(--shadow-md);
 }
 
 .team-card__name {
     font-size: 1.5rem;
-    color: var(--brand-dark);
+    color: #0d2a47;
     margin-bottom: 0.5rem;
 }
 
 .team-card__role {
-    color: var(--brand-accent);
+    color: #FFD54F;
     text-transform: uppercase;
     font-size: 0.85rem;
     font-weight: 700;
