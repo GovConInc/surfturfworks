@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Brad's Electrical past performance - View our portfolio of completed projects for Amazon, NC A&T, Cummins, Siemens, and government clients.">
+    <title>Past Performance | Brad's Electrical</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="images/brads-logo.png">
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <div class="container navbar__inner">
+            <a href="index.html" class="navbar__logo">
+                <img src="images/brads-logo.png" alt="Brad's Electrical">
+            </a>
+            
+            <div class="navbar__menu">
+                <a href="index.html" class="navbar__link">Home</a>
+                <a href="about.html" class="navbar__link">About</a>
+                <a href="projects.html" class="navbar__link active">Past Performance</a>
+                <a href="contact.html" class="navbar__cta">Contact Us</a>
+            </div>
+            
+            <div class="navbar__toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div class="page-hero__content">
+            <h1 class="page-hero__title">Past <span>Performance</span></h1>
+            <p class="page-hero__subtitle">
+                A proven track record delivering electrical excellence for commercial, industrial, and government clients.
+            </p>
+        </div>
+    </section>
+
+    <!-- CREDENTIALS SECTION -->
+    <section class="credentials">
+        <div class="container">
+            <div class="section-header" style="margin-bottom: 3rem;">
+                <h2 style="color: var(--white);">Government Credentials</h2>
+                <p style="color: rgba(255,255,255,0.7);">Fully compliant and ready for federal, state, and local contracts.</p>
+            </div>
+            
+            <div class="credentials__grid">
+                <div class="credential-card">
+                    <div class="credential-card__label">GSA Contract Number</div>
+                    <div class="credential-card__value">47QSMS24D00BY</div>
+                </div>
+                <div class="credential-card">
+                    <div class="credential-card__label">SAM UEI</div>
+                    <div class="credential-card__value">KGF9BFA9WMY9</div>
+                </div>
+                <div class="credential-card">
+                    <div class="credential-card__label">CAGE Code</div>
+                    <div class="credential-card__value">9GYJ2</div>
+                </div>
+                <div class="credential-card">
+                    <div class="credential-card__label">NC License</div>
+                    <div class="credential-card__value">#32448-U (Unlimited)</div>
+                </div>
+                <div class="credential-card">
+                    <div class="credential-card__label">GSA SIN</div>
+                    <div class="credential-card__value">561210FAC</div>
+                </div>
+                <div class="credential-card">
+                    <div class="credential-card__label">Certifications</div>
+                    <div class="credential-card__value">WOSB • SDB • NC HUB</div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 2rem;">
+                <p style="color: rgba(255,255,255,0.7); margin-bottom: 0.5rem;">Compliance: FAR 889 Part A/B (Prohibited Telecom) • TAA Compliant</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-header__label">Our Work</span>
+                <h2 class="section-header__title">Completed Projects</h2>
+                <p class="section-header__text">
+                    From massive distribution centers to university infrastructure, here's a selection of our work.
+                </p>
+            </div>
+            
+            <div class="grid grid-3">
+                
+                <!-- Amazon Project -->
+                <div class="project-card">
+                    <div class="project-card__header">
+                        <p class="project-card__client">Amazon / Bailey Construction</p>
+                        <h3 class="project-card__title">Distribution Center Infrastructure</h3>
+                    </div>
+                    <div class="project-card__body">
+                        <p class="project-card__value">$1,454,448</p>
+                        <p class="project-card__description">
+                            Massive medium voltage upgrade for key Amazon distribution facility. Complete infrastructure overhaul supporting millions of daily operations including EV fleet charging capabilities.
+                        </p>
+                        <div class="project-card__tags">
+                            <span class="project-card__tag">Medium Voltage</span>
+                            <span class="project-card__tag">Duct Banks</span>
+                            <span class="project-card__tag">EV Charging</span>
+                            <span class="project-card__tag">Switchgear</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- NC A&T McNair Hall -->
+                <div class="project-card">
+                    <div class="project-card__header">
+                        <p class="project-card__client">NC A&T State University</p>
+                        <h3 class="project-card__title">McNair Hall Generator Replacement</h3>
+                    </div>
+                    <div class="project-card__body">
+                        <p class="project-card__value">$267,500</p>
+                        <p class="project-card__description">
+                            Complete 275kW generator replacement and ATS upgrade for critical university infrastructure. Ensuring mission-critical power continuity for academic and research facilities.
+                        </p>
+                        <div class="project-card__tags">
+                            <span class="project-card__tag">275kW Generator</span>
+                            <span class="project-card__tag">ATS Upgrade</span>
+                            <span class="project-card__tag">University</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cummins -->
+                <div class="project-card">
+                    <div class="project-card__header">
+                        <p class="project-card__client">Cummins Inc.</p>
+                        <h3 class="project-card__title">Industrial Generator Systems</h3>
+                    </div>
+                    <div class="project-card__body">
+                        <p class="project-card__value">$185,000+</p>
+                        <p class="project-card__description">
+                            Ongoing partnership for industrial generator installations and maintenance. Turnkey standby power solutions ensuring operational continuity for manufacturing facilities.
+                        </p>
+                        <div class="project-card__tags">
+                            <span class="project-card__tag">Generator Install</span>
+                            <span class="project-card__tag">Industrial</span>
+                            <span class="project-card__tag">Maintenance</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Siemens -->
+                <div class="project-card">
+                    <div class="project-card__header">
+                        <p class="project-card__client">Siemens</p>
+                        <h3 class="project-card__title">Switchgear & Controls</h3>
+                    </div>
+                    <div class="project-card__body">
+                        <p class="project-card__value">$220,000+</p>
+                        <p class="project-card__description">
+                            Installation and integration of Siemens switchgear and control systems for commercial and industrial clients. Precision electrical work meeting exacting manufacturer specifications.
+                        </p>
+                        <div class="project-card__tags">
+                            <span class="project-card__tag">Switchgear</span>
+                            <span class="project-card__tag">Controls</span>
+                            <span class="project-card__tag">Integration</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Winston-Salem Government -->
+                <div class="project-card">
+                    <div class="project-card__header">
+                        <p class="project-card__client">City of Winston-Salem</p>
+                        <h3 class="project-card__title">Municipal Facilities Electrical</h3>
+                    </div>
+                    <div class="project-card__body">
+                        <p class="project-card__value">$150,000+</p>
+                        <p class="project-card__description">
+                            Electrical upgrades and maintenance for municipal facilities. Supporting city infrastructure with reliable power solutions and emergency response capabilities.
+                        </p>
+                        <div class="project-card__tags">
+                            <span class="project-card__tag">Government</span>
+                            <span class="project-card__tag">Municipal</span>
+                            <span class="project-card__tag">Facilities</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- US Postal Service -->
+                <div class="project-card">
+                    <div class="project-card__header">
+                        <p class="project-card__client">US Postal Service</p>
+                        <h3 class="project-card__title">Central Robotic Hub Support</h3>
+                    </div>
+                    <div class="project-card__body">
+                        <p class="project-card__value">$175,000+</p>
+                        <p class="project-card__description">
+                            Electrical support for massive 5 million sq. ft. central robotic hub in Greensboro. Critical infrastructure supporting national mail processing operations.
+                        </p>
+                        <div class="project-card__tags">
+                            <span class="project-card__tag">Federal</span>
+                            <span class="project-card__tag">5M Sq Ft</span>
+                            <span class="project-card__tag">Robotics</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Carroll Company -->
+                <div class="project-card">
+                    <div class="project-card__header">
+                        <p class="project-card__client">The Carroll Company</p>
+                        <h3 class="project-card__title">Equestrian Facility Power</h3>
+                    </div>
+                    <div class="project-card__body">
+                        <p class="project-card__value">$95,000+</p>
+                        <p class="project-card__description">
+                            Complete electrical systems for premium equestrian farms. Specialized installations including barn lighting, climate control systems, and outdoor arena power.
+                        </p>
+                        <div class="project-card__tags">
+                            <span class="project-card__tag">Agricultural</span>
+                            <span class="project-card__tag">Specialty</span>
+                            <span class="project-card__tag">Lighting</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- AT&T -->
+                <div class="project-card">
+                    <div class="project-card__header">
+                        <p class="project-card__client">AT&T</p>
+                        <h3 class="project-card__title">Telecom Infrastructure</h3>
+                    </div>
+                    <div class="project-card__body">
+                        <p class="project-card__value">$125,000+</p>
+                        <p class="project-card__description">
+                            Electrical infrastructure for telecommunications facilities. Supporting critical communication networks with reliable, redundant power systems.
+                        </p>
+                        <div class="project-card__tags">
+                            <span class="project-card__tag">Telecom</span>
+                            <span class="project-card__tag">Infrastructure</span>
+                            <span class="project-card__tag">Redundancy</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- P&G -->
+                <div class="project-card">
+                    <div class="project-card__header">
+                        <p class="project-card__client">Procter & Gamble</p>
+                        <h3 class="project-card__title">Manufacturing Electrical</h3>
+                    </div>
+                    <div class="project-card__body">
+                        <p class="project-card__value">$200,000+</p>
+                        <p class="project-card__description">
+                            Electrical systems for manufacturing operations. High-demand industrial power supporting continuous production with zero-tolerance for downtime.
+                        </p>
+                        <div class="project-card__tags">
+                            <span class="project-card__tag">Manufacturing</span>
+                            <span class="project-card__tag">Industrial</span>
+                            <span class="project-card__tag">High Demand</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- NASCAR -->
+                <div class="project-card">
+                    <div class="project-card__header">
+                        <p class="project-card__client">NASCAR</p>
+                        <h3 class="project-card__title">Facility Power Systems</h3>
+                    </div>
+                    <div class="project-card__body">
+                        <p class="project-card__value">$110,000+</p>
+                        <p class="project-card__description">
+                            Electrical systems for NASCAR-affiliated facilities. Supporting the high-energy demands of motorsports with reliable, high-capacity power distribution.
+                        </p>
+                        <div class="project-card__tags">
+                            <span class="project-card__tag">Sports</span>
+                            <span class="project-card__tag">High Capacity</span>
+                            <span class="project-card__tag">Distribution</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- NC A&T ATS -->
+                <div class="project-card">
+                    <div class="project-card__header">
+                        <p class="project-card__client">NC A&T State University</p>
+                        <h3 class="project-card__title">Campus ATS Upgrades</h3>
+                    </div>
+                    <div class="project-card__body">
+                        <p class="project-card__value">$145,000</p>
+                        <p class="project-card__description">
+                            Multiple Automatic Transfer Switch upgrades across campus buildings. Ensuring seamless power transfer during outages for critical research and academic operations.
+                        </p>
+                        <div class="project-card__tags">
+                            <span class="project-card__tag">ATS</span>
+                            <span class="project-card__tag">Campus-Wide</span>
+                            <span class="project-card__tag">Backup Power</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Residential Portfolio -->
+                <div class="project-card">
+                    <div class="project-card__header">
+                        <p class="project-card__client">Various Property Management</p>
+                        <h3 class="project-card__title">Residential Portfolio Maintenance</h3>
+                    </div>
+                    <div class="project-card__body">
+                        <p class="project-card__value">$250,000+</p>
+                        <p class="project-card__description">
+                            Ongoing electrical maintenance and upgrades for residential property portfolios. LED retrofits, panel upgrades, and 24/7 emergency response services.
+                        </p>
+                        <div class="project-card__tags">
+                            <span class="project-card__tag">Residential</span>
+                            <span class="project-card__tag">LED Retrofit</span>
+                            <span class="project-card__tag">24/7 Service</span>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- TOTAL VALUE -->
+    <section class="section bg-light">
+        <div class="container">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <span class="section-header__label">Total Impact</span>
+                <h2 style="margin-bottom: 1rem;">$5M+ in Delivered Projects</h2>
+                <p style="font-size: 1.15rem; color: var(--gray-600); margin-bottom: 2rem;">
+                    From single generator installs to multi-million dollar infrastructure projects, Brad's Electrical has the experience and capability to deliver on any scale.
+                </p>
+                
+                <div class="stats__grid" style="margin-top: 3rem;">
+                    <div class="stat">
+                        <div class="stat__number">50+</div>
+                        <div class="stat__label">Projects Completed</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat__number">12+</div>
+                        <div class="stat__label">Major Clients</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat__number">100%</div>
+                        <div class="stat__label">On-Time Delivery</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat__number">0</div>
+                        <div class="stat__label">Safety Incidents</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES OVERVIEW -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-header__label">Capabilities</span>
+                <h2 class="section-header__title">What We Deliver</h2>
+            </div>
+            
+            <div class="grid grid-3">
+                <div class="card">
+                    <div class="card__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                    </div>
+                    <h3 class="card__title">Medium Voltage</h3>
+                    <p class="card__text">Underground cabling, transformer installation, concrete duct banks, and switchgear for large-scale operations.</p>
+                </div>
+                
+                <div class="card">
+                    <div class="card__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
+                    </div>
+                    <h3 class="card__title">Generator Systems</h3>
+                    <p class="card__text">125kW to 275kW+ installations. Complete turnkey solutions including ATS, load bank testing, and fuel system integration.</p>
+                </div>
+                
+                <div class="card">
+                    <div class="card__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
+                    </div>
+                    <h3 class="card__title">Facilities Management</h3>
+                    <p class="card__text">GSA-approved maintenance (SIN 561210FAC). LED retrofits, panel upgrades, predictive maintenance, and 24/7 emergency response.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <h2 class="cta__title">Ready to Add Your Project to Our Portfolio?</h2>
+            <p class="cta__text">
+                Let's discuss your electrical needs and show you why the biggest names in NC trust Brad's Electrical.
+            </p>
+            <div class="cta__actions">
+                <a href="contact.html" class="btn btn--primary btn--lg">Get a Quote</a>
+                <a href="tel:+13364624403" class="btn btn--outline-light btn--lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    (336) 462-4403
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div>
+                    <div class="footer__logo">
+                        <img src="images/brads-logo.png" alt="Brad's Electrical">
+                    </div>
+                    <p class="footer__about">
+                        Premier electrical contractor serving commercial and government clients across North Carolina. Woman-Owned Small Business with 20+ years of field experience.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="footer__title">Navigation</h4>
+                    <a href="index.html" class="footer__link">Home</a>
+                    <a href="about.html" class="footer__link">About Us</a>
+                    <a href="projects.html" class="footer__link">Past Performance</a>
+                    <a href="contact.html" class="footer__link">Contact</a>
+                </div>
+                
+                <div>
+                    <h4 class="footer__title">Services</h4>
+                    <a href="projects.html" class="footer__link">Medium Voltage</a>
+                    <a href="projects.html" class="footer__link">Generator Systems</a>
+                    <a href="projects.html" class="footer__link">Facilities Management</a>
+                    <a href="projects.html" class="footer__link">Government Contracting</a>
+                </div>
+                
+                <div>
+                    <h4 class="footer__title">Contact</h4>
+                    <div class="footer__contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        <span>580 Garden Valley Dr<br>Winston Salem, NC 27107</span>
+                    </div>
+                    <div class="footer__contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        <span>(336) 462-4403</span>
+                    </div>
+                    <div class="footer__contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                        <span>janet@bradselec.com</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="footer__copyright">© 2026 Brad's Electrical Construction Company, LLC. All rights reserved.</p>
+                <div class="footer__certs">
+                    <span class="footer__cert">WOSB</span>
+                    <span class="footer__cert">SDB</span>
+                    <span class="footer__cert">NC HUB</span>
+                    <span class="footer__cert">GSA</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

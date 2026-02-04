@@ -3,97 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Brad's Electrical Construction - Premier commercial and government electrical contractor serving North Carolina. GSA Schedule holder, WOSB, HubZone Certified.">
-    <meta name="keywords" content="electrical contractor, commercial electrical, government contractor, GSA, North Carolina, Medium Voltage, Amazon Contractor">
-    <meta name="author" content="Brad's Electrical Construction">
-    
-    <title>Brad's Electrical Construction | Powering Commercial & Government Infrastructure</title>
+    <meta name="description" content="Brad's Electrical Construction - Premier commercial and government electrical contractor serving North Carolina. WOSB Certified, GSA Schedule Holder.">
+    <title>Brad's Electrical | Thinking Electric? Think Brad.</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" type="image/png" href="images/brads-logo.png">
-    
-    <style>
-        /* Hero Specifics */
-        .hero {
-            background-attachment: scroll; /* Changed from fixed - parallax breaks on mobile */
-        }
-        
-        @media (min-width: 769px) {
-            .hero {
-                background-attachment: fixed; /* Enable parallax only on desktop */
-            }
-        }
-        
-        /* Gradient Overlay for better text readability on the cityscape */
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            /* Deep, professional Navy gradient that allows the cityscape to peek through */
-            background: linear-gradient(135deg, rgba(15, 52, 96, 0.96) 0%, rgba(15, 52, 96, 0.75) 100%);
-            z-index: 1;
-        }
-
-        /* Case Study Section */
-        .case-study {
-            position: relative;
-            overflow: hidden;
-            border-radius: var(--radius-sm); /* Sharper corners */
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .case-study__badge {
-            background: var(--brand-accent);
-            color: var(--brand-dark);
-            padding: 0.35rem 1rem;
-            border-radius: 2px;
-            font-weight: 700;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            display: inline-block;
-            margin-bottom: 1rem;
-        }
-        
-        /* Mobile-specific adjustments for this page */
-        @media (max-width: 768px) {
-            .hero__content {
-                padding: 0 0.5rem;
-            }
-            
-            /* Floating card on case study image */
-            .floating-stat-card {
-                position: relative !important;
-                bottom: auto !important;
-                left: auto !important;
-                margin-top: 1rem;
-            }
-        }
-    </style>
-    
-
 </head>
 <body>
 
+    <!-- NAVIGATION -->
     <nav class="navbar">
-        <div class="navbar__inner container">
+        <div class="container navbar__inner">
             <a href="index.html" class="navbar__logo">
-                <img src="images/brads-logo.png" alt="Brad's Electrical Construction Logo" style="height: 60px;">
+                <img src="images/brads-logo.png" alt="Brad's Electrical">
             </a>
             
             <div class="navbar__menu">
                 <a href="index.html" class="navbar__link active">Home</a>
-                <a href="about.html" class="navbar__link">About Us</a>
-                <a href="services.html" class="navbar__link">Services</a>
-                <a href="services.html#government" class="navbar__link">Government</a>
-                <a href="contact.html" class="navbar__cta">Request Quote</a>
+                <a href="about.html" class="navbar__link">About</a>
+                <a href="projects.html" class="navbar__link">Past Performance</a>
+                <a href="contact.html" class="navbar__cta">Contact Us</a>
             </div>
             
-            <div class="navbar__toggle">
+            <div class="navbar__toggle" onclick="toggleMenu()">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -101,279 +37,283 @@
         </div>
     </nav>
 
-    <section class="hero" style="background-image: url('images/cityscape2096730_1280.jpg'); background-size: cover; background-position: center;">
-        <div class="container" style="position: relative; z-index: 2;">
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
             <div class="hero__content">
-                <div class="hero__badge animate-fade-in-up">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-                    WOSB & GSA Schedule Holder
+                <div class="hero__badge">
+                    WOSB Certified • GSA Schedule Holder
                 </div>
                 
-                <h1 class="hero__title animate-fade-in-up" style="animation-delay: 0.1s;">
-                    Powering <span class="text-accent">Critical</span> Infrastructure
+                <h1 class="hero__title">
+                    Thinking Electric?<br>
+                    <span>Think Brad.</span>
                 </h1>
                 
-                <p class="hero__subtitle animate-fade-in-up" style="animation-delay: 0.2s;">
-                    From 5 million sq. ft. logistics hubs to mission-critical university grids. We deliver medium voltage solutions, industrial generation, and electrical construction with military precision.
+                <p class="hero__subtitle">
+                    From Amazon distribution centers to university power grids, we deliver electrical excellence with 20+ years of experience and a team that's as passionate about your project as you are.
                 </p>
                 
-                <div class="hero__actions animate-fade-in-up" style="animation-delay: 0.3s;">
-                    <a href="contact.html" class="btn btn--primary">
-                        Discuss Your Project
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                <div class="hero__actions">
+                    <a href="contact.html" class="btn btn--primary btn--lg">
+                        Start Your Project
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                     </a>
-                    <a href="services.html#government" class="btn btn--secondary">
-                        Government Capabilities
+                    <a href="projects.html" class="btn btn--outline-light btn--lg">
+                        View Our Work
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <div class="stats">
+    <!-- STATS -->
+    <section class="stats">
         <div class="container">
             <div class="stats__grid">
-                <div class="stat" data-animate>
-                    <div class="stat__number" data-count="6" data-format="years">0</div>
-                    <div class="stat__label">Years in Business</div>
+                <div class="stat">
+                    <div class="stat__number">20+</div>
+                    <div class="stat__label">Years Experience</div>
                 </div>
-                <div class="stat" data-animate>
-                    <div class="stat__number">$<span data-count="5" data-format="">0</span>M<span>+</span></div>
-                    <div class="stat__label">Project Value Delivered</div>
+                <div class="stat">
+                    <div class="stat__number">$5M+</div>
+                    <div class="stat__label">Projects Delivered</div>
                 </div>
-                <div class="stat" data-animate>
-                    <div class="stat__number" data-count="100" data-format="">0</div>
-                    <div class="stat__label">% GSA/TAA Compliant</div>
+                <div class="stat">
+                    <div class="stat__number">30+</div>
+                    <div class="stat__label">Team Members</div>
                 </div>
-                <div class="stat" data-animate>
-                    <div class="stat__number" data-count="32448" data-format="">0</div>
-                    <div class="stat__label">NC Unlimited License</div>
+                <div class="stat">
+                    <div class="stat__number">100%</div>
+                    <div class="stat__label">Client Satisfaction</div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
+    <!-- PARTNERS -->
     <section class="partners">
-        <p class="partners__title">Trusted by Industry Giants & Federal Agencies</p>
-        <div class="partners__track">
-            <div class="partners__item"><img src="images/amazon_logo__CB579561563_.png" alt="Amazon"></div>
-            <div class="partners__item"><img src="images/U_S__General_Services_Administration_flag_logo__16624.png" alt="GSA"></div>
-            <div class="partners__item"><img src="images/411_att.png" alt="AT&T"></div>
-            <div class="partners__item"><img src="images/download.png" alt="NASCAR"></div>
-            <div class="partners__item"><img src="images/PG-Symbol.png" alt="PG"></div>
-            <div class="partners__item"><img src="images/siemens.png" alt="Siemens"></div>
-            <div class="partners__item"><img src="images/Cummins-Logo-Vector-768x768.png" alt="Cummins"></div>
-            <div class="partners__item"><img src="images/city-of-winston-salem-logo.png" alt="City of Winston-Salem North Carolina official logo featuring blue shield emblem with stylized S design and text reading City of WINSTON-SALEM NORTH CAROLINA"></div>
-        </div>
-    </section>
-
-    <section class="section section--light">
+        <p class="partners__title">Trusted by Industry Leaders</p>
         <div class="container">
-            <div class="grid grid--2" style="align-items: center; gap: var(--spacing-xl);">
-                <div style="position: relative;" data-animate>
-                    <img src="images/store5619201_1280.jpg" alt="Amazon Warehouse Interior" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); height: 500px; object-fit: cover;">
-                    <div style="position: absolute; bottom: 30px; left: -30px; background: var(--surface-white); padding: 1.5rem; border-radius: var(--radius-md); box-shadow: var(--shadow-lg); border-left: 5px solid var(--brand-primary);">
-                        <p style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.25rem;">Project Value</p>
-                        <p style="font-size: 1.5rem; font-weight: 800; color: var(--brand-dark); margin: 0;">$1,454,448</p>
-                    </div>
-                </div>
-
-                <div data-animate>
-                    <div class="case-study__badge">Featured Project</div>
-                    <h2 style="margin-bottom: 1.5rem;">Amazon Distribution <span class="text-accent">Infrastructure</span></h2>
-                    <p>We don't just change lightbulbs; we power logistics giants. Working with Bailey Construction, Brad's Electrical executed a massive <strong>medium voltage upgrade</strong> for a key Amazon facility.</p>
-                    
-                    <ul style="margin-bottom: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                        <li style="display: flex; gap: 10px; align-items: flex-start;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--brand-primary)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <span style="font-size: 0.95rem; font-weight: 500;">Medium Voltage Cabling</span>
-                        </li>
-                        <li style="display: flex; gap: 10px; align-items: flex-start;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--brand-primary)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <span style="font-size: 0.95rem; font-weight: 500;">Concrete Duct Banks</span>
-                        </li>
-                        <li style="display: flex; gap: 10px; align-items: flex-start;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--brand-primary)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <span style="font-size: 0.95rem; font-weight: 500;">EV Fleet Charging</span>
-                        </li>
-                        <li style="display: flex; gap: 10px; align-items: flex-start;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--brand-primary)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <span style="font-size: 0.95rem; font-weight: 500;">Switchboards & Transformers</span>
-                        </li>
-                    </ul>
-
-                    <a href="services.html" class="btn btn--outline">View Commercial Capabilities</a>
-                </div>
+            <div class="partners__grid">
+                <div class="partners__item"><img src="images/amazon_logo__CB579561563_.png" alt="Amazon"></div>
+                <div class="partners__item"><img src="images/siemens.png" alt="Siemens"></div>
+                <div class="partners__item"><img src="images/Cummins-Logo-Vector-768x768.png" alt="Cummins"></div>
+                <div class="partners__item"><img src="images/U_S__General_Services_Administration_flag_logo__16624.png" alt="GSA"></div>
+                <div class="partners__item"><img src="images/city-of-winston-salem-logo.png" alt="Winston-Salem"></div>
+                <div class="partners__item"><img src="images/411_att.png" alt="AT&T"></div>
+                <div class="partners__item"><img src="images/download.png" alt="NASCAR"></div>
+                <div class="partners__item"><img src="images/PG-Symbol.png" alt="P&G"></div>
             </div>
         </div>
     </section>
 
+    <!-- MISSION / BRAD ACRONYM -->
+    <section class="mission">
+        <div class="container">
+            <div class="mission__content">
+                <div class="mission__acronym">
+                    <div class="mission__letter">B</div>
+                    <div class="mission__letter">R</div>
+                    <div class="mission__letter">A</div>
+                    <div class="mission__letter">D</div>
+                </div>
+                
+                <div class="mission__words">
+                    <span class="mission__word"><span>B</span>e Reliable</span>
+                    <span class="mission__word"><span>R</span>esponsive</span>
+                    <span class="mission__word"><span>A</span>nd</span>
+                    <span class="mission__word"><span>D</span>emonstrate Excellence</span>
+                </div>
+                
+                <p class="mission__tagline">We bring the same passion to your project that you have.</p>
+                <p class="mission__text">
+                    Every wire we run, every connection we make, and every system we install reflects our commitment to quality. 
+                    We're not just contractors — we're partners invested in your success.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES HIGHLIGHT -->
     <section class="section">
         <div class="container">
-            <div style="text-align: center; margin-bottom: var(--spacing-lg);">
-                <h2>Complete <span class="text-accent">Electrical Solutions</span></h2>
-                <p style="max-width: 600px; margin: 1rem auto; color: var(--text-secondary);">
-                    From the Carroll Company's equestrian farms to the NC A&T University grid, we handle complex environments with ease.
+            <div class="section-header">
+                <span class="section-header__label">What We Do</span>
+                <h2 class="section-header__title">Electrical Excellence, Delivered</h2>
+                <p class="section-header__text">
+                    From medium voltage infrastructure to industrial generators, we handle the complex projects others can't.
                 </p>
             </div>
             
-            <div class="grid grid--3">
-                <div class="service-card" data-animate>
-                    <div class="service-card__icon">
+            <div class="grid grid-3">
+                <div class="card">
+                    <div class="card__icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
                     </div>
-                    <h3 class="service-card__title">Medium Voltage</h3>
-                    <p>Underground cabling, transformer installation, and duct banks for large campuses and industrial parks.</p>
+                    <h3 class="card__title">Medium Voltage</h3>
+                    <p class="card__text">Underground cabling, transformer installation, switchgear, and concrete duct banks for campuses and industrial facilities.</p>
                 </div>
                 
-                <div class="service-card" data-animate>
-                    <div class="service-card__icon">
+                <div class="card">
+                    <div class="card__icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
                     </div>
-                    <h3 class="service-card__title">Industrial Generators</h3>
-                    <p>Installation of 125kW to 275kW+ standby systems. We keep facilities like McNair Hall powered when the grid fails.</p>
+                    <h3 class="card__title">Generator Systems</h3>
+                    <p class="card__text">125kW to 275kW+ standby power solutions. Complete installations including ATS, load bank testing, and fuel systems.</p>
                 </div>
                 
-                <div class="service-card" data-animate>
-                    <div class="service-card__icon">
+                <div class="card">
+                    <div class="card__icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
                     </div>
-                    <h3 class="service-card__title">Facilities Management</h3>
-                    <p>GSA Schedule approved maintenance (SIN 561210FAC). We support universities, residential portfolios, and government hubs.</p>
+                    <h3 class="card__title">Facilities Management</h3>
+                    <p class="card__text">GSA-approved maintenance for universities, government facilities, and commercial properties. Available 24/7.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section section--dark" style="background: linear-gradient(135deg, #0a213a 0%, #0F3460 50%, #0a213a 100%);">
+    <!-- FEATURED PROJECT -->
+    <section class="section bg-light">
         <div class="container">
-            <div class="grid grid--2" style="align-items: center; gap: 4rem;">
-                
-                <div data-animate>
-                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
-                        <span style="background: var(--brand-accent); color: var(--brand-dark); padding: 0.5rem 1rem; border-radius: 2px; font-weight: 700; font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase;">GSA Schedule Holder</span>
-                        <span style="color: white; font-weight: 600; letter-spacing: 0.5px;">Federal Acquisition Ready</span>
-                    </div>
-                    
-                    <h2 class="text-white">Streamlined Procurement for <span class="text-accent">vernment Agencies</span></h2>
-                    <p class="text-white" style="opacity: 0.9;">
-                        Brad's Electrical is a certified Woman-Owned Small Business (WOSB) and Small Disadvantaged Business (SDB). We hold an active GSA Schedule, making procurement compliant, fast, and reliable.
-                    </p>
-                    
-                    <div class="grid grid--2" style="margin-top: 2rem; margin-bottom: 2rem;">
-                        <div style="background: rgba(255,255,255,0.08); padding: 1.25rem; border-radius: 4px; border-left: 3px solid var(--brand-accent);">
-                            <h4 style="color: var(--brand-accent); margin-bottom: 0.5rem; font-size: 0.85rem;">GSA Contract</h4>
-                            <p style="color: white; font-family: monospace; font-size: 1.1rem; margin: 0;">47QSMS24D00BY</p>
-                        </div>
-                        <div style="background: rgba(255,255,255,0.08); padding: 1.25rem; border-radius: 4px; border-left: 3px solid var(--brand-accent);">
-                            <h4 style="color: var(--brand-accent); margin-bottom: 0.5rem; font-size: 0.85rem;">SAM UEI</h4>
-                            <p style="color: white; font-family: monospace; font-size: 1.1rem; margin: 0;">KGF9BFA9WMY9</p>
-                        </div>
-                    </div>
-                    
-                    <a href="govconinc/surfturfworks/surfturfworks-a6d24acf3da87dddea19680d7611e4fed2bf9a3e/TechnicalProposalResponses.pdf" target="_blank" class="btn btn--primary">
-                        View Capability Statement
-                    </a>
+            <div class="about-intro">
+                <div class="about-intro__image">
+                    <img src="images/store5619201_1280.jpg" alt="Amazon Facility Project">
                 </div>
-                
-                <div class="grid grid--1" style="gap: 1rem;">
-                    <div class="gov-card" data-animate>
-                        <h4 class="text-white" style="display: flex; justify-content: space-between;">
-                            NC A&T State University
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="var(--brand-accent)" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-                        </h4>
-                        <p class="text-white" style="font-size: 0.9rem; margin-bottom: 0;">Executed multiple generator replacements (275kW McNair Hall) and ATS upgrades.</p>
-                    </div>
-                    
-                    <div class="gov-card" data-animate>
-                        <h4 class="text-white" style="display: flex; justify-content: space-between;">
-                            US Postal Service
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="var(--brand-accent)" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-                        </h4>
-                        <p class="text-white" style="font-size: 0.9rem; margin-bottom: 0;">Electrical support for massive 5M sq. ft. central robotic hub in Greensboro.</p>
-                    </div>
-                    
-                    <div class="gov-card" data-animate>
-                        <h4 class="text-white" style="display: flex; justify-content: space-between;">
-                            Compliance
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="var(--brand-accent)" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                        </h4>
-                        <p class="text-white" style="font-size: 0.9rem; margin-bottom: 0;">Fully compliant with FAR 889 Part A/B (Prohibited Telecom) and TAA requirements.</p>
-                    </div>
+                <div>
+                    <span class="section-header__label">Featured Project</span>
+                    <h2>Amazon Distribution Infrastructure</h2>
+                    <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">
+                        Working with Bailey Construction, we executed a massive medium voltage upgrade for a key Amazon facility — powering logistics operations that serve millions.
+                    </p>
+                    <p style="font-size: 2rem; font-weight: 700; color: var(--primary); margin-bottom: 1.5rem;">$1,454,448</p>
+                    <ul style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 2rem;">
+                        <li style="display: flex; align-items: center; gap: 0.5rem; color: var(--gray-600);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="var(--accent)" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Medium Voltage Cabling
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem; color: var(--gray-600);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="var(--accent)" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Concrete Duct Banks
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem; color: var(--gray-600);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="var(--accent)" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            EV Fleet Charging
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem; color: var(--gray-600);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="var(--accent)" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Switchboards & Transformers
+                        </li>
+                    </ul>
+                    <a href="projects.html" class="btn btn--secondary">View All Projects</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section" style="background: var(--surface-off-white);">
-        <div class="container" style="text-align: center; max-width: 800px;">
-            <h2 style="color: var(--brand-dark); margin-bottom: 1.5rem;">Ready to upgrade your infrastructure?</h2>
-            <p style="margin-bottom: 2.5rem; font-size: 1.125rem;">
-                Whether it's a new ground-up warehouse, a complex generator retrofit, or a government facility maintenance contract, Brad's Electrical brings the power.
+    <!-- CREDENTIALS -->
+    <section class="credentials">
+        <div class="container">
+            <div class="section-header" style="margin-bottom: 3rem;">
+                <h2 style="color: var(--white);">Government-Ready Credentials</h2>
+                <p style="color: rgba(255,255,255,0.7);">Fully compliant and ready for federal, state, and local contracts.</p>
+            </div>
+            
+            <div class="credentials__grid">
+                <div class="credential-card">
+                    <div class="credential-card__label">GSA Contract Number</div>
+                    <div class="credential-card__value">47QSMS24D00BY</div>
+                </div>
+                <div class="credential-card">
+                    <div class="credential-card__label">SAM UEI</div>
+                    <div class="credential-card__value">KGF9BFA9WMY9</div>
+                </div>
+                <div class="credential-card">
+                    <div class="credential-card__label">NC Contractor License</div>
+                    <div class="credential-card__value">#32448-U (Unlimited)</div>
+                </div>
+                <div class="credential-card">
+                    <div class="credential-card__label">CAGE Code</div>
+                    <div class="credential-card__value">9GYJ2</div>
+                </div>
+                <div class="credential-card">
+                    <div class="credential-card__label">Certifications</div>
+                    <div class="credential-card__value">WOSB • SDB • NC HUB</div>
+                </div>
+                <div class="credential-card">
+                    <div class="credential-card__label">GSA SIN</div>
+                    <div class="credential-card__value">561210FAC</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <h2 class="cta__title">Ready to Power Your Next Project?</h2>
+            <p class="cta__text">
+                Whether it's a new facility, a complex retrofit, or government contract work — we bring the expertise and passion to get it done right.
             </p>
-            <div class="cta-buttons" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <a href="contact.html" class="btn btn--primary">Get a Quote</a>
-                <a href="tel:+13364624403" class="btn btn--outline">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <div class="cta__actions">
+                <a href="contact.html" class="btn btn--primary btn--lg">Get a Quote</a>
+                <a href="tel:+13364624403" class="btn btn--outline-light btn--lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                     (336) 462-4403
                 </a>
             </div>
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <div class="footer__grid">
                 <div>
                     <div class="footer__logo">
-                        <img src="images/brads-logo.png" alt="Brad's Electrical" style="height: 50px; filter: brightness(0) invert(1);">
+                        <img src="images/brads-logo.png" alt="Brad's Electrical">
                     </div>
                     <p class="footer__about">
-                        Premier electrical contractor serving commercial and government clients across North Carolina since 2018.
+                        Premier electrical contractor serving commercial and government clients across North Carolina. Woman-Owned Small Business with 20+ years of field experience.
                     </p>
                 </div>
                 
                 <div>
-                    <h4 class="footer__title">Quick Links</h4>
-                    <div class="footer__links">
-                        <a href="index.html" class="footer__link">Home</a>
-                        <a href="about.html" class="footer__link">About Us</a>
-                        <a href="services.html" class="footer__link">Services</a>
-                        <a href="contact.html" class="footer__link">Contact</a>
-                    </div>
+                    <h4 class="footer__title">Navigation</h4>
+                    <a href="index.html" class="footer__link">Home</a>
+                    <a href="about.html" class="footer__link">About Us</a>
+                    <a href="projects.html" class="footer__link">Past Performance</a>
+                    <a href="contact.html" class="footer__link">Contact</a>
                 </div>
                 
                 <div>
-                    <h4 class="footer__title">Expertise</h4>
-                    <div class="footer__links">
-                        <a href="services.html" class="footer__link">Facilities Maintenance</a>
-                        <a href="services.html" class="footer__link">Generator Installation</a>
-                        <a href="services.html" class="footer__link">Medium Voltage</a>
-                        <a href="services.html#government" class="footer__link">Government Contracting</a>
-                    </div>
+                    <h4 class="footer__title">Services</h4>
+                    <a href="projects.html" class="footer__link">Medium Voltage</a>
+                    <a href="projects.html" class="footer__link">Generator Systems</a>
+                    <a href="projects.html" class="footer__link">Facilities Management</a>
+                    <a href="projects.html" class="footer__link">Government Contracting</a>
                 </div>
                 
                 <div>
-                    <h4 class="footer__title">Contact Info</h4>
+                    <h4 class="footer__title">Contact</h4>
                     <div class="footer__contact-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                         <span>580 Garden Valley Dr<br>Winston Salem, NC 27107</span>
                     </div>
                     <div class="footer__contact-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                         <span>(336) 462-4403</span>
                     </div>
                     <div class="footer__contact-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
                         <span>janet@bradselec.com</span>
                     </div>
                 </div>
             </div>
             
             <div class="footer__bottom">
-                <p class="footer__copyright">
-                    © 2026 Brad's Electrical Construction Company, LLC. All rights reserved.
-                </p>
+                <p class="footer__copyright">© 2026 Brad's Electrical Construction Company, LLC. All rights reserved.</p>
                 <div class="footer__certs">
                     <span class="footer__cert">WOSB</span>
                     <span class="footer__cert">SDB</span>

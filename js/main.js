@@ -1,5 +1,6 @@
 /* ============================================
    BRAD'S ELECTRICAL CONSTRUCTION - MAIN JS
+   Modern Minimalist Design
    ============================================ */
 
 // Wait for DOM to be ready
@@ -7,9 +8,22 @@ document.addEventListener('DOMContentLoaded', function() {
     initNavbar();
     initMobileMenu();
     initAnimations();
-    initContactForm();
     initCounters();
+    initPartnersScroll();
 });
+
+/* ============================================
+   GLOBAL TOGGLE MENU (called from HTML onclick)
+   ============================================ */
+function toggleMenu() {
+    const menu = document.querySelector('.navbar__menu');
+    const toggle = document.querySelector('.navbar__toggle');
+    
+    if (menu && toggle) {
+        menu.classList.toggle('active');
+        toggle.classList.toggle('active');
+    }
+}
 
 /* ============================================
    NAVBAR FUNCTIONALITY
@@ -99,78 +113,35 @@ function initAnimations() {
 }
 
 /* ============================================
-   CONTACT FORM - SENDS TO EMAIL
+   CONTACT FORM - Using FormSubmit.co
+   Form submits directly, no JS handler needed
    ============================================ */
-function initContactForm() {
-    const form = document.getElementById('contactForm');
-    
-    if (!form) return;
-    
-    form.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        
-        const submitBtn = form.querySelector('button[type="submit"]');
-        const originalText = submitBtn.textContent;
-        
-        // Show loading state
-        submitBtn.textContent = 'Sending...';
-        submitBtn.disabled = true;
-        
-        // Collect form data
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData.entries());
-        
-        // CONFIGURATION: Change this email address
-        // ==========================================
-        const recipientEmail = 'SeanConwayEmail@Gmail.com';
-        // ==========================================
-        
-        try {
-            // Using FormSubmit.co service (free, no backend needed)
-            // Just change the email in the form action to your email
-            const response = await fetch(form.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
-            
-            if (response.ok) {
-                showSuccessMessage();
-                form.reset();
-            } else {
-                throw new Error('Form submission failed');
-            }
-        } catch (error) {
-            // Fallback: Open email client
-            const subject = encodeURIComponent(`Website Contact: ${data.name}`);
-            const body = encodeURIComponent(
-                `Name: ${data.name}\n` +
-                `Email: ${data.email}\n` +
-                `Phone: ${data.phone || 'Not provided'}\n` +
-                `Service: ${data.service || 'Not specified'}\n\n` +
-                `Message:\n${data.message}`
-            );
-            
-            window.location.href = `mailto:${recipientEmail}?subject=${subject}&body=${body}`;
-        }
-        
-        // Reset button
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-    });
-}
+// Note: Contact form now uses FormSubmit.co directly via form action
+// No JavaScript handling required - it submits natively
 
-function showSuccessMessage() {
-    const successMsg = document.querySelector('.success-message');
-    if (successMsg) {
-        successMsg.classList.add('show');
-        setTimeout(() => {
-            successMsg.classList.remove('show');
-        }, 5000);
+function showFormSuccess() {
+    // Show success message if redirected back with success param
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('submitted') === 'true') {
+        const form = document.querySelector('.contact-form');
+        if (form) {
+            form.innerHTML = `
+                <div class="form-success">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="none" stroke="var(--accent)" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                    <h3>Message Sent!</h3>
+                    <p>Thank you for contacting Brad's Electrical. We'll get back to you within 24 hours.</p>
+                    <a href="index.html" class="btn btn--primary">Back to Home</a>
+                </div>
+            `;
+        }
     }
 }
+
+// Check for form success on page load
+document.addEventListener('DOMContentLoaded', showFormSuccess);
 
 /* ============================================
    ANIMATED COUNTERS
