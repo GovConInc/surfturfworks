@@ -3,15 +3,368 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Brad's Electrical past performance - View our portfolio of completed projects for Amazon, NC A&T, Cummins, Siemens, and government clients.">
+    <meta name="description" content="Brad's Electrical past performance — Documented projects and formal quotes for Amazon, NC A&T, Cummins, USPS, Procter & Gamble, High Point University, and more.">
     <title>Past Performance | Brad's Electrical</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" type="image/png" href="images/brads-logo.png">
+
+    <style>
+        .serif-font { font-family: 'Playfair Display', serif; }
+
+        /* ---- Featured Project ---- */
+        .featured-project {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--gray-100);
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 2rem;
+        }
+        .featured-project__visual {
+            background: linear-gradient(135deg, var(--primary) 0%, #0f2744 100%);
+            padding: 3.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .featured-project__visual::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(245,166,35,0.15), transparent 60%);
+            pointer-events: none;
+        }
+        .featured-project__badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(245,166,35,0.2);
+            border: 1px solid rgba(245,166,35,0.4);
+            color: var(--accent);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+            width: fit-content;
+            position: relative;
+            z-index: 1;
+        }
+        .featured-project__value {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        .featured-project__client-label {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+            margin-bottom: 0;
+            position: relative;
+            z-index: 1;
+        }
+        .featured-project__date-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.15);
+            color: rgba(255,255,255,0.8);
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-top: 1.5rem;
+            width: fit-content;
+            position: relative;
+            z-index: 1;
+        }
+        .featured-project__body {
+            padding: 3.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .featured-project__title {
+            font-size: 1.75rem;
+            color: var(--gray-900);
+            margin-bottom: 1.25rem;
+            line-height: 1.3;
+        }
+        .featured-project__desc {
+            font-size: 1.05rem;
+            color: var(--gray-600);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        .scope-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1.5rem 0;
+        }
+        .scope-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.6rem;
+            font-size: 0.95rem;
+            color: var(--gray-600);
+            line-height: 1.5;
+        }
+        .scope-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.55rem;
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+        .scope-list--primary li::before {
+            background: var(--primary);
+        }
+        .tag-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .tag-row__item {
+            background: var(--gray-100);
+            color: var(--gray-700);
+            padding: 0.3rem 0.85rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        .tag-row__item--outline {
+            background: var(--gray-50);
+            color: var(--gray-600);
+            padding: 0.2rem 0.65rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            border: 1px solid var(--gray-200);
+        }
+
+        @media (max-width: 968px) {
+            .featured-project { grid-template-columns: 1fr; }
+            .featured-project__visual { padding: 2.5rem; }
+            .featured-project__body { padding: 2.5rem; }
+            .featured-project__value { font-size: 2.5rem; }
+        }
+
+        /* ---- Category Headers ---- */
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            margin-bottom: 2.5rem;
+            margin-top: 1rem;
+        }
+        .category-header__icon {
+            width: 52px;
+            height: 52px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            flex-shrink: 0;
+        }
+        .category-header__icon svg { width: 26px; height: 26px; }
+        .category-header__text h3 {
+            font-size: 1.5rem;
+            color: var(--gray-900);
+            margin-bottom: 0.15rem;
+        }
+        .category-header__text p {
+            font-size: 0.9rem;
+            color: var(--gray-500);
+            margin-bottom: 0;
+        }
+
+        /* ---- Quote Cards ---- */
+        .quote-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--gray-100);
+            transition: var(--transition-slow);
+        }
+        .quote-card:hover {
+            box-shadow: var(--shadow-xl);
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+        .quote-card__header {
+            background: var(--primary);
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        .quote-card__header-left { flex: 1; }
+        .quote-card__client {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--accent);
+            margin-bottom: 0.35rem;
+            font-weight: 700;
+        }
+        .quote-card__title {
+            font-size: 1.15rem;
+            color: var(--white);
+            margin-bottom: 0;
+            line-height: 1.3;
+        }
+        .quote-card__ref {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.15);
+            color: rgba(255,255,255,0.8);
+            padding: 0.25rem 0.6rem;
+            border-radius: 5px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            white-space: nowrap;
+            letter-spacing: 0.5px;
+            height: fit-content;
+            margin-top: 0.15rem;
+        }
+        .quote-card__body { padding: 1.5rem; }
+        .quote-card__meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--gray-100);
+        }
+        .quote-card__value {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+        }
+        .quote-card__date {
+            font-size: 0.8rem;
+            color: var(--gray-400);
+            font-weight: 500;
+        }
+
+        /* ---- Performance Cards (no formal quote ref) ---- */
+        .perf-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--gray-100);
+            transition: var(--transition-slow);
+            position: relative;
+            overflow: hidden;
+        }
+        .perf-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--accent);
+        }
+        .perf-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+            border-color: var(--accent);
+        }
+        .perf-card__client {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--accent);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .perf-card__title {
+            font-size: 1.25rem;
+            color: var(--gray-900);
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+        }
+        .perf-card__desc {
+            font-size: 0.95rem;
+            color: var(--gray-600);
+            line-height: 1.7;
+            margin-bottom: 1.25rem;
+        }
+
+        /* ---- Impact Strip ---- */
+        .impact-strip {
+            background: var(--primary);
+            padding: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .impact-strip::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0;
+            width: 100%; height: 100%;
+            background: radial-gradient(circle at top right, rgba(245,166,35,0.1), transparent 50%);
+            pointer-events: none;
+        }
+        .impact-strip .stats__grid { position: relative; z-index: 1; }
+        .impact-strip .stat__number { color: var(--accent); font-size: 3rem; }
+        .impact-strip .stat__label { color: rgba(255,255,255,0.7); }
+
+        @media (max-width: 640px) {
+            .impact-strip .stat__number { font-size: 2rem; }
+        }
+
+        /* ---- Timeline Dividers ---- */
+        .timeline-divider {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin: 3.5rem 0 2.5rem;
+        }
+        .timeline-divider__line {
+            flex: 1;
+            height: 1px;
+            background: var(--gray-200);
+        }
+        .timeline-divider__label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gray-400);
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 640px) {
+            .timeline-divider { flex-direction: column; gap: 0.5rem; }
+            .timeline-divider__line { width: 100%; }
+            .timeline-divider__label { white-space: normal; text-align: center; }
+        }
+    </style>
 </head>
 <body>
 
@@ -38,20 +391,23 @@
     </nav>
 
     <!-- PAGE HERO -->
-    <section class="page-hero">
-        <div class="page-hero__content">
-            <h1 class="page-hero__title">Past <span>Performance</span></h1>
-            <p class="page-hero__subtitle">
-                A proven track record delivering electrical excellence for commercial, industrial, and government clients.
-            </p>
+    <section class="page-hero" style="padding: 12rem 0 6rem;">
+        <div class="container">
+            <div class="page-hero__content">
+                <span class="hero__badge" style="margin-bottom: 1.5rem;">Documented &amp; Verifiable</span>
+                <h1 class="page-hero__title serif-font" style="font-size: 4rem;">Past <span>Performance</span></h1>
+                <p class="page-hero__subtitle" style="max-width: 700px; margin: 0 auto; line-height: 1.8;">
+                    Every project listed here is backed by formal quotes, contract documents, and verifiable client references. This is the work — no fluff, no estimates.
+                </p>
+            </div>
         </div>
     </section>
 
-    <!-- CREDENTIALS SECTION -->
+    <!-- CREDENTIALS -->
     <section class="credentials">
         <div class="container">
             <div class="section-header" style="margin-bottom: 3rem;">
-                <h2 style="color: var(--white);">Government Credentials</h2>
+                <h2 style="color: var(--white);" class="serif-font">Government Credentials</h2>
                 <p style="color: rgba(255,255,255,0.7);">Fully compliant and ready for federal, state, and local contracts.</p>
             </div>
             
@@ -66,7 +422,7 @@
                 </div>
                 <div class="credential-card">
                     <div class="credential-card__label">CAGE Code</div>
-                    <div class="credential-card__value">9GYJ2</div>
+                    <div class="credential-card__value">91JP5</div>
                 </div>
                 <div class="credential-card">
                     <div class="credential-card__label">NC License</div>
@@ -88,290 +444,433 @@
         </div>
     </section>
 
-    <!-- PROJECTS -->
+    <!-- IMPACT STRIP -->
+    <section class="impact-strip">
+        <div class="container">
+            <div class="stats__grid">
+                <div class="stat">
+                    <div class="stat__number">$1.58M+</div>
+                    <div class="stat__label">Documented Contract Value</div>
+                </div>
+                <div class="stat">
+                    <div class="stat__number">12</div>
+                    <div class="stat__label">Documented Projects</div>
+                </div>
+                <div class="stat">
+                    <div class="stat__number">100%</div>
+                    <div class="stat__label">On-Time Delivery</div>
+                </div>
+                <div class="stat">
+                    <div class="stat__number">0</div>
+                    <div class="stat__label">Safety Incidents</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECTION 1: FEATURED — AMAZON
+         ======================================== -->
     <section class="section">
         <div class="container">
             <div class="section-header">
-                <span class="section-header__label">Our Work</span>
-                <h2 class="section-header__title">Completed Projects</h2>
-                <p class="section-header__text">
-                    From massive distribution centers to university infrastructure, here's a selection of our work.
-                </p>
+                <span class="section-header__label">Flagship Project</span>
+                <h2 class="section-header__title serif-font">Featured Past Performance</h2>
             </div>
-            
-            <div class="grid grid-3">
-                
-                <!-- Amazon Project -->
-                <div class="project-card">
-                    <div class="project-card__header">
-                        <p class="project-card__client">Amazon / Bailey Construction</p>
-                        <h3 class="project-card__title">Distribution Center Infrastructure</h3>
-                    </div>
-                    <div class="project-card__body">
-                        <p class="project-card__value">$1,454,448</p>
-                        <p class="project-card__description">
-                            Massive medium voltage upgrade for key Amazon distribution facility. Complete infrastructure overhaul supporting millions of daily operations including EV fleet charging capabilities.
-                        </p>
-                        <div class="project-card__tags">
-                            <span class="project-card__tag">Medium Voltage</span>
-                            <span class="project-card__tag">Duct Banks</span>
-                            <span class="project-card__tag">EV Charging</span>
-                            <span class="project-card__tag">Switchgear</span>
-                        </div>
+
+            <div class="featured-project">
+                <div class="featured-project__visual">
+                    <div class="featured-project__badge">★ Largest Completed Project</div>
+                    <div class="featured-project__value">$1,454,448</div>
+                    <p class="featured-project__client-label">Amazon via Bailey Construction (General Contractor)</p>
+                    <div class="featured-project__date-badge">Completed August 18, 2025</div>
+                </div>
+                <div class="featured-project__body">
+                    <h3 class="featured-project__title">Amazon Service Upgrade &amp; EV Infrastructure</h3>
+                    <p class="featured-project__desc">
+                        Full-scale utility service upgrade for a major Amazon distribution facility. Ground-up medium voltage infrastructure supporting daily logistics operations and the transition to an electric delivery fleet.
+                    </p>
+                    <ul class="scope-list">
+                        <li>Upgraded service from power utility to the building</li>
+                        <li>Ran all new medium voltage cables and poured concrete duct banks</li>
+                        <li>Set new medium voltage transformers, docking stations, switchboards, and generators</li>
+                        <li>Installed electric vehicle charging stations for new delivery vans</li>
+                    </ul>
+                    <div class="tag-row">
+                        <span class="tag-row__item">Medium Voltage</span>
+                        <span class="tag-row__item">Concrete Duct Banks</span>
+                        <span class="tag-row__item">Transformers</span>
+                        <span class="tag-row__item">Switchboards</span>
+                        <span class="tag-row__item">EV Charging</span>
+                        <span class="tag-row__item">Generators</span>
                     </div>
                 </div>
-                
-                <!-- NC A&T McNair Hall -->
-                <div class="project-card">
-                    <div class="project-card__header">
-                        <p class="project-card__client">NC A&T State University</p>
-                        <h3 class="project-card__title">McNair Hall Generator Replacement</h3>
-                    </div>
-                    <div class="project-card__body">
-                        <p class="project-card__value">$267,500</p>
-                        <p class="project-card__description">
-                            Complete 275kW generator replacement and ATS upgrade for critical university infrastructure. Ensuring mission-critical power continuity for academic and research facilities.
-                        </p>
-                        <div class="project-card__tags">
-                            <span class="project-card__tag">275kW Generator</span>
-                            <span class="project-card__tag">ATS Upgrade</span>
-                            <span class="project-card__tag">University</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Cummins -->
-                <div class="project-card">
-                    <div class="project-card__header">
-                        <p class="project-card__client">Cummins Inc.</p>
-                        <h3 class="project-card__title">Industrial Generator Systems</h3>
-                    </div>
-                    <div class="project-card__body">
-                        <p class="project-card__value">$185,000+</p>
-                        <p class="project-card__description">
-                            Ongoing partnership for industrial generator installations and maintenance. Turnkey standby power solutions ensuring operational continuity for manufacturing facilities.
-                        </p>
-                        <div class="project-card__tags">
-                            <span class="project-card__tag">Generator Install</span>
-                            <span class="project-card__tag">Industrial</span>
-                            <span class="project-card__tag">Maintenance</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Siemens -->
-                <div class="project-card">
-                    <div class="project-card__header">
-                        <p class="project-card__client">Siemens</p>
-                        <h3 class="project-card__title">Switchgear & Controls</h3>
-                    </div>
-                    <div class="project-card__body">
-                        <p class="project-card__value">$220,000+</p>
-                        <p class="project-card__description">
-                            Installation and integration of Siemens switchgear and control systems for commercial and industrial clients. Precision electrical work meeting exacting manufacturer specifications.
-                        </p>
-                        <div class="project-card__tags">
-                            <span class="project-card__tag">Switchgear</span>
-                            <span class="project-card__tag">Controls</span>
-                            <span class="project-card__tag">Integration</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Winston-Salem Government -->
-                <div class="project-card">
-                    <div class="project-card__header">
-                        <p class="project-card__client">City of Winston-Salem</p>
-                        <h3 class="project-card__title">Municipal Facilities Electrical</h3>
-                    </div>
-                    <div class="project-card__body">
-                        <p class="project-card__value">$150,000+</p>
-                        <p class="project-card__description">
-                            Electrical upgrades and maintenance for municipal facilities. Supporting city infrastructure with reliable power solutions and emergency response capabilities.
-                        </p>
-                        <div class="project-card__tags">
-                            <span class="project-card__tag">Government</span>
-                            <span class="project-card__tag">Municipal</span>
-                            <span class="project-card__tag">Facilities</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- US Postal Service -->
-                <div class="project-card">
-                    <div class="project-card__header">
-                        <p class="project-card__client">US Postal Service</p>
-                        <h3 class="project-card__title">Central Robotic Hub Support</h3>
-                    </div>
-                    <div class="project-card__body">
-                        <p class="project-card__value">$175,000+</p>
-                        <p class="project-card__description">
-                            Electrical support for massive 5 million sq. ft. central robotic hub in Greensboro. Critical infrastructure supporting national mail processing operations.
-                        </p>
-                        <div class="project-card__tags">
-                            <span class="project-card__tag">Federal</span>
-                            <span class="project-card__tag">5M Sq Ft</span>
-                            <span class="project-card__tag">Robotics</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Carroll Company -->
-                <div class="project-card">
-                    <div class="project-card__header">
-                        <p class="project-card__client">The Carroll Company</p>
-                        <h3 class="project-card__title">Equestrian Facility Power</h3>
-                    </div>
-                    <div class="project-card__body">
-                        <p class="project-card__value">$95,000+</p>
-                        <p class="project-card__description">
-                            Complete electrical systems for premium equestrian farms. Specialized installations including barn lighting, climate control systems, and outdoor arena power.
-                        </p>
-                        <div class="project-card__tags">
-                            <span class="project-card__tag">Agricultural</span>
-                            <span class="project-card__tag">Specialty</span>
-                            <span class="project-card__tag">Lighting</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- AT&T -->
-                <div class="project-card">
-                    <div class="project-card__header">
-                        <p class="project-card__client">AT&T</p>
-                        <h3 class="project-card__title">Telecom Infrastructure</h3>
-                    </div>
-                    <div class="project-card__body">
-                        <p class="project-card__value">$125,000+</p>
-                        <p class="project-card__description">
-                            Electrical infrastructure for telecommunications facilities. Supporting critical communication networks with reliable, redundant power systems.
-                        </p>
-                        <div class="project-card__tags">
-                            <span class="project-card__tag">Telecom</span>
-                            <span class="project-card__tag">Infrastructure</span>
-                            <span class="project-card__tag">Redundancy</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- P&G -->
-                <div class="project-card">
-                    <div class="project-card__header">
-                        <p class="project-card__client">Procter & Gamble</p>
-                        <h3 class="project-card__title">Manufacturing Electrical</h3>
-                    </div>
-                    <div class="project-card__body">
-                        <p class="project-card__value">$200,000+</p>
-                        <p class="project-card__description">
-                            Electrical systems for manufacturing operations. High-demand industrial power supporting continuous production with zero-tolerance for downtime.
-                        </p>
-                        <div class="project-card__tags">
-                            <span class="project-card__tag">Manufacturing</span>
-                            <span class="project-card__tag">Industrial</span>
-                            <span class="project-card__tag">High Demand</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- NASCAR -->
-                <div class="project-card">
-                    <div class="project-card__header">
-                        <p class="project-card__client">NASCAR</p>
-                        <h3 class="project-card__title">Facility Power Systems</h3>
-                    </div>
-                    <div class="project-card__body">
-                        <p class="project-card__value">$110,000+</p>
-                        <p class="project-card__description">
-                            Electrical systems for NASCAR-affiliated facilities. Supporting the high-energy demands of motorsports with reliable, high-capacity power distribution.
-                        </p>
-                        <div class="project-card__tags">
-                            <span class="project-card__tag">Sports</span>
-                            <span class="project-card__tag">High Capacity</span>
-                            <span class="project-card__tag">Distribution</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- NC A&T ATS -->
-                <div class="project-card">
-                    <div class="project-card__header">
-                        <p class="project-card__client">NC A&T State University</p>
-                        <h3 class="project-card__title">Campus ATS Upgrades</h3>
-                    </div>
-                    <div class="project-card__body">
-                        <p class="project-card__value">$145,000</p>
-                        <p class="project-card__description">
-                            Multiple Automatic Transfer Switch upgrades across campus buildings. Ensuring seamless power transfer during outages for critical research and academic operations.
-                        </p>
-                        <div class="project-card__tags">
-                            <span class="project-card__tag">ATS</span>
-                            <span class="project-card__tag">Campus-Wide</span>
-                            <span class="project-card__tag">Backup Power</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Residential Portfolio -->
-                <div class="project-card">
-                    <div class="project-card__header">
-                        <p class="project-card__client">Various Property Management</p>
-                        <h3 class="project-card__title">Residential Portfolio Maintenance</h3>
-                    </div>
-                    <div class="project-card__body">
-                        <p class="project-card__value">$250,000+</p>
-                        <p class="project-card__description">
-                            Ongoing electrical maintenance and upgrades for residential property portfolios. LED retrofits, panel upgrades, and 24/7 emergency response services.
-                        </p>
-                        <div class="project-card__tags">
-                            <span class="project-card__tag">Residential</span>
-                            <span class="project-card__tag">LED Retrofit</span>
-                            <span class="project-card__tag">24/7 Service</span>
-                        </div>
-                    </div>
-                </div>
-                
             </div>
         </div>
     </section>
 
-    <!-- TOTAL VALUE -->
+    <!-- ========================================
+         SECTION 2: NC A&T — FORMAL QUOTES
+         ======================================== -->
     <section class="section bg-light">
         <div class="container">
-            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
-                <span class="section-header__label">Total Impact</span>
-                <h2 style="margin-bottom: 1rem;">$5M+ in Delivered Projects</h2>
-                <p style="font-size: 1.15rem; color: var(--gray-600); margin-bottom: 2rem;">
-                    From single generator installs to multi-million dollar infrastructure projects, Brad's Electrical has the experience and capability to deliver on any scale.
-                </p>
-                
-                <div class="stats__grid" style="margin-top: 3rem;">
-                    <div class="stat">
-                        <div class="stat__number">50+</div>
-                        <div class="stat__label">Projects Completed</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat__number">12+</div>
-                        <div class="stat__label">Major Clients</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat__number">100%</div>
-                        <div class="stat__label">On-Time Delivery</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat__number">0</div>
-                        <div class="stat__label">Safety Incidents</div>
-                    </div>
+
+            <div class="category-header">
+                <div class="category-header__icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
+                </div>
+                <div class="category-header__text">
+                    <h3 class="serif-font">NC A&amp;T State University</h3>
+                    <p>7 formally quoted projects — generators, cooling towers, chillers, AHU replacements, and panel upgrades.</p>
                 </div>
             </div>
+
+            <!-- ---- Generator Replacements ---- -->
+            <div class="timeline-divider">
+                <div class="timeline-divider__line"></div>
+                <div class="timeline-divider__label">Generator Replacements — Cummins Inc.</div>
+                <div class="timeline-divider__line"></div>
+            </div>
+
+            <div class="grid grid-2">
+
+                <!-- BE24-136 -->
+                <div class="quote-card">
+                    <div class="quote-card__header">
+                        <div class="quote-card__header-left">
+                            <p class="quote-card__client">Cummins Inc. — NC A&amp;T</p>
+                            <h3 class="quote-card__title">McNair Hall — 275kW Generator Replacement</h3>
+                        </div>
+                        <span class="quote-card__ref">BE24-136</span>
+                    </div>
+                    <div class="quote-card__body">
+                        <div class="quote-card__meta">
+                            <span class="quote-card__value">$41,400</span>
+                            <span class="quote-card__date">June 28, 2024</span>
+                        </div>
+                        <ul class="scope-list">
+                            <li>Rework and install (1) 275-KW, 480V Standby Generator</li>
+                            <li>Rework (1) 410 Amp circuit from old generator to new generator</li>
+                            <li>Provide and install new ATS in existing location</li>
+                            <li>Install ground rods, controls, and handle lifting/rigging</li>
+                        </ul>
+                        <div class="tag-row">
+                            <span class="tag-row__item--outline">275kW</span>
+                            <span class="tag-row__item--outline">480V</span>
+                            <span class="tag-row__item--outline">ATS</span>
+                            <span class="tag-row__item--outline">Rigging</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BE24-135 -->
+                <div class="quote-card">
+                    <div class="quote-card__header">
+                        <div class="quote-card__header-left">
+                            <p class="quote-card__client">Cummins Inc. — NC A&amp;T</p>
+                            <h3 class="quote-card__title">Dairy Farm — 125kW Generator Replacement</h3>
+                        </div>
+                        <span class="quote-card__ref">BE24-135</span>
+                    </div>
+                    <div class="quote-card__body">
+                        <div class="quote-card__meta">
+                            <span class="quote-card__value">$18,800</span>
+                            <span class="quote-card__date">June 28, 2024</span>
+                        </div>
+                        <ul class="scope-list">
+                            <li>Install (1) 125-KW, 120/208V Standby Generator</li>
+                            <li>Rework (1) 400 Amp circuit from ATS to new generator</li>
+                            <li>Provide and install new ATS in existing location</li>
+                            <li>Install ground rods, controls, and handle lifting/rigging</li>
+                        </ul>
+                        <div class="tag-row">
+                            <span class="tag-row__item--outline">125kW</span>
+                            <span class="tag-row__item--outline">120/208V</span>
+                            <span class="tag-row__item--outline">ATS</span>
+                            <span class="tag-row__item--outline">Grounding</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ---- HVAC / Mechanical Support ---- -->
+            <div class="timeline-divider">
+                <div class="timeline-divider__line"></div>
+                <div class="timeline-divider__label">HVAC &amp; Mechanical Support — Professional Air</div>
+                <div class="timeline-divider__line"></div>
+            </div>
+
+            <div class="grid grid-2">
+
+                <!-- BE18-060 -->
+                <div class="quote-card">
+                    <div class="quote-card__header">
+                        <div class="quote-card__header-left">
+                            <p class="quote-card__client">Professional Air — NC A&amp;T</p>
+                            <h3 class="quote-card__title">Fort IRC Cooling Tower</h3>
+                        </div>
+                        <span class="quote-card__ref">BE18-060</span>
+                    </div>
+                    <div class="quote-card__body">
+                        <div class="quote-card__meta">
+                            <span class="quote-card__value">$26,750</span>
+                            <span class="quote-card__date">July 8, 2018</span>
+                        </div>
+                        <ul class="scope-list">
+                            <li>Complete electrical installation per plans dated 5-24-2018</li>
+                            <li>Demo existing circuits, disconnects, and conduits</li>
+                            <li>Provide/install new circuits &amp; breakers (125A, 35A, 70A, 45A, 20A GFPE)</li>
+                            <li>Provide/install new disconnects (2-100A N1, 100A N4X, 60A, 200A)</li>
+                            <li>Install (1) 480V 50HP 65A N1 Bypass VFD with DV/DT filter &amp; Bacnet</li>
+                            <li>Control conduit from VFD to BAS Control System</li>
+                            <li>Rework CT water treatment power and bond tower equipment</li>
+                        </ul>
+                        <div class="tag-row">
+                            <span class="tag-row__item--outline">Cooling Tower</span>
+                            <span class="tag-row__item--outline">VFD</span>
+                            <span class="tag-row__item--outline">BAS Controls</span>
+                            <span class="tag-row__item--outline">480V</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BE19-208 -->
+                <div class="quote-card">
+                    <div class="quote-card__header">
+                        <div class="quote-card__header-left">
+                            <p class="quote-card__client">Professional Air — NC A&amp;T</p>
+                            <h3 class="quote-card__title">Noble Hall — AHU Replacement</h3>
+                        </div>
+                        <span class="quote-card__ref">BE19-208</span>
+                    </div>
+                    <div class="quote-card__body">
+                        <div class="quote-card__meta">
+                            <span class="quote-card__value">$21,875</span>
+                            <span class="quote-card__date">September 24, 2019</span>
+                        </div>
+                        <ul class="scope-list">
+                            <li>Electrical installation per plans dated 7-15-2019</li>
+                            <li>Dedicated 30A circuit for AHU-3 &amp; 30A fused NEMA 3 disconnect</li>
+                            <li>Dedicated 125A circuit for ACC-1 &amp; 200A fused NEMA 3 disconnect</li>
+                            <li>Dedicated 20A circuits for HT-1 &amp; HT-2 with 30A fused NEMA 1 disconnects</li>
+                            <li>Provide/install breakers (3p 480V 30A, 3p 480V 125A, 1p 277V 20A)</li>
+                            <li>Install (2) GFCI outlets with heavy-duty covers</li>
+                        </ul>
+                        <div class="tag-row">
+                            <span class="tag-row__item--outline">AHU</span>
+                            <span class="tag-row__item--outline">ACC</span>
+                            <span class="tag-row__item--outline">Disconnects</span>
+                            <span class="tag-row__item--outline">GFCI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BE19-201 -->
+                <div class="quote-card">
+                    <div class="quote-card__header">
+                        <div class="quote-card__header-left">
+                            <p class="quote-card__client">Professional Air — NC A&amp;T</p>
+                            <h3 class="quote-card__title">Smith–Price Cooling Tower Replacement</h3>
+                        </div>
+                        <span class="quote-card__ref">BE19-201</span>
+                    </div>
+                    <div class="quote-card__body">
+                        <div class="quote-card__meta">
+                            <span class="quote-card__value">$5,950</span>
+                            <span class="quote-card__date">September 14, 2019</span>
+                        </div>
+                        <ul class="scope-list">
+                            <li>Electrical installation per plans dated 8-21-2019</li>
+                            <li>Demo existing wiring from MCC, disconnects, and conduits</li>
+                            <li>Provide/install new circuits per drawings (E-2)</li>
+                            <li>Reuse existing breakers/buckets in MCC; repair conduits as needed</li>
+                            <li>Bond tower equipment to support structure</li>
+                            <li>Install new GFCI, bell box, and HD cover at cooling tower</li>
+                        </ul>
+                        <div class="tag-row">
+                            <span class="tag-row__item--outline">Cooling Tower</span>
+                            <span class="tag-row__item--outline">MCC</span>
+                            <span class="tag-row__item--outline">Bonding</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BE19-247 -->
+                <div class="quote-card">
+                    <div class="quote-card__header">
+                        <div class="quote-card__header-left">
+                            <p class="quote-card__client">Professional Air — NC A&amp;T</p>
+                            <h3 class="quote-card__title">IRC Building — Chiller Replacement</h3>
+                        </div>
+                        <span class="quote-card__ref">BE19-247</span>
+                    </div>
+                    <div class="quote-card__body">
+                        <div class="quote-card__meta">
+                            <span class="quote-card__value">$5,750</span>
+                            <span class="quote-card__date">December 2, 2019</span>
+                        </div>
+                        <ul class="scope-list">
+                            <li>Electrical installation per plans dated 10-11-2019</li>
+                            <li>Demo existing conduit, wire, and breaker</li>
+                            <li>Install new conduit and wiring from disconnect to chiller</li>
+                            <li>Provide/install (1) 500A breaker plug (SRPK800A500) &amp; (3) 500A fuses (A4J500)</li>
+                            <li>New flex and wiring for load side of chiller and pumps</li>
+                            <li>Fire seal holes and label disconnects</li>
+                        </ul>
+                        <div class="tag-row">
+                            <span class="tag-row__item--outline">Chiller</span>
+                            <span class="tag-row__item--outline">500A</span>
+                            <span class="tag-row__item--outline">Fire Seal</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ---- Panel & Distribution ---- -->
+            <div class="timeline-divider">
+                <div class="timeline-divider__line"></div>
+                <div class="timeline-divider__label">Panel &amp; Distribution — The Budd Group</div>
+                <div class="timeline-divider__line"></div>
+            </div>
+
+            <div class="grid grid-2">
+
+                <!-- BE25-132 -->
+                <div class="quote-card">
+                    <div class="quote-card__header">
+                        <div class="quote-card__header-left">
+                            <p class="quote-card__client">The Budd Group — NC A&amp;T</p>
+                            <h3 class="quote-card__title">Install New 400-Amp Panel</h3>
+                        </div>
+                        <span class="quote-card__ref">BE25-132</span>
+                    </div>
+                    <div class="quote-card__body">
+                        <div class="quote-card__meta">
+                            <span class="quote-card__value">$5,225</span>
+                            <span class="quote-card__date">August 11, 2025</span>
+                        </div>
+                        <ul class="scope-list">
+                            <li>Replace (1) existing 400A panel with (1) new panel</li>
+                            <li>Provide/install all new breakers in the new panel</li>
+                            <li>New supports to secure panel and conduits to wall</li>
+                            <li>Rework conduits and extend wiring as needed</li>
+                        </ul>
+                        <div class="tag-row">
+                            <span class="tag-row__item--outline">Panel Upgrade</span>
+                            <span class="tag-row__item--outline">400A</span>
+                            <span class="tag-row__item--outline">Breakers</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
     </section>
 
-    <!-- SERVICES OVERVIEW -->
+    <!-- ========================================
+         SECTION 3: ADDITIONAL PAST PERFORMANCE
+         ======================================== -->
     <section class="section">
+        <div class="container">
+
+            <div class="category-header">
+                <div class="category-header__icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                </div>
+                <div class="category-header__text">
+                    <h3 class="serif-font">Additional Past Performance</h3>
+                    <p>Major commercial, federal, and institutional clients served.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-2">
+
+                <!-- USPS -->
+                <div class="perf-card">
+                    <p class="perf-card__client">United States Postal Service</p>
+                    <h3 class="perf-card__title">Greensboro Distribution Hub</h3>
+                    <p class="perf-card__desc">
+                        Electrical work for a 5 million sq. ft. central hub utilizing advanced robotics for national mail sorting. Underground and medium voltage work with no utility poles.
+                    </p>
+                    <ul class="scope-list scope-list--primary">
+                        <li>Electrical systems in 5M sq. ft. robotic mail sorting facility</li>
+                        <li>Underground and medium voltage work (no utility poles)</li>
+                    </ul>
+                    <div class="tag-row">
+                        <span class="tag-row__item--outline">Federal</span>
+                        <span class="tag-row__item--outline">5M Sq Ft</span>
+                        <span class="tag-row__item--outline">Medium Voltage</span>
+                        <span class="tag-row__item--outline">Robotics</span>
+                    </div>
+                </div>
+
+                <!-- Procter & Gamble -->
+                <div class="perf-card">
+                    <p class="perf-card__client">Procter &amp; Gamble</p>
+                    <h3 class="perf-card__title">Warehouse Electrical Services</h3>
+                    <p class="perf-card__desc">
+                        Electrical services within massive warehouse facilities supporting continuous manufacturing, logistics, and distribution operations.
+                    </p>
+                    <ul class="scope-list scope-list--primary">
+                        <li>Electrical services within large-scale warehouse facilities</li>
+                    </ul>
+                    <div class="tag-row">
+                        <span class="tag-row__item--outline">Industrial</span>
+                        <span class="tag-row__item--outline">Warehouse</span>
+                        <span class="tag-row__item--outline">Manufacturing</span>
+                    </div>
+                </div>
+
+                <!-- Carroll Company -->
+                <div class="perf-card">
+                    <p class="perf-card__client">The Carroll Company</p>
+                    <h3 class="perf-card__title">Hotel &amp; Equestrian Farm</h3>
+                    <p class="perf-card__desc">
+                        Complete electrical installation for a hotel property and an equestrian farm — full-building wiring and specialty agricultural power systems.
+                    </p>
+                    <ul class="scope-list scope-list--primary">
+                        <li>Full wiring for a hotel property</li>
+                        <li>Electrical installation for an equestrian farm</li>
+                    </ul>
+                    <div class="tag-row">
+                        <span class="tag-row__item--outline">Hospitality</span>
+                        <span class="tag-row__item--outline">Agricultural</span>
+                        <span class="tag-row__item--outline">Full Build</span>
+                    </div>
+                </div>
+
+                <!-- High Point University -->
+                <div class="perf-card">
+                    <p class="perf-card__client">High Point University</p>
+                    <h3 class="perf-card__title">Residential Housing Maintenance</h3>
+                    <p class="perf-card__desc">
+                        Ongoing maintenance and electrical service for approximately 300 university-owned residential properties and houses.
+                    </p>
+                    <ul class="scope-list scope-list--primary">
+                        <li>Maintenance and electrical service for ~300 residential properties</li>
+                        <li>University-owned housing portfolio</li>
+                    </ul>
+                    <div class="tag-row">
+                        <span class="tag-row__item--outline">University</span>
+                        <span class="tag-row__item--outline">Residential</span>
+                        <span class="tag-row__item--outline">~300 Properties</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CAPABILITIES -->
+    <section class="section bg-light">
         <div class="container">
             <div class="section-header">
                 <span class="section-header__label">Capabilities</span>
-                <h2 class="section-header__title">What We Deliver</h2>
+                <h2 class="section-header__title serif-font">What We Deliver</h2>
             </div>
             
             <div class="grid grid-3">
@@ -388,7 +887,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
                     </div>
                     <h3 class="card__title">Generator Systems</h3>
-                    <p class="card__text">125kW to 275kW+ installations. Complete turnkey solutions including ATS, load bank testing, and fuel system integration.</p>
+                    <p class="card__text">125kW to 275kW+ installations. Complete turnkey solutions including ATS, ground rods, controls, and rigging.</p>
                 </div>
                 
                 <div class="card">
@@ -396,7 +895,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
                     </div>
                     <h3 class="card__title">Facilities Management</h3>
-                    <p class="card__text">GSA-approved maintenance (SIN 561210FAC). LED retrofits, panel upgrades, predictive maintenance, and 24/7 emergency response.</p>
+                    <p class="card__text">GSA-approved maintenance (SIN 561210FAC). Panel upgrades, HVAC support, cooling tower wiring, and 24/7 emergency response.</p>
                 </div>
             </div>
         </div>
@@ -405,7 +904,7 @@
     <!-- CTA -->
     <section class="cta">
         <div class="container">
-            <h2 class="cta__title">Ready to Add Your Project to Our Portfolio?</h2>
+            <h2 class="cta__title serif-font">Ready to Add Your Project to This Portfolio?</h2>
             <p class="cta__text">
                 Let's discuss your electrical needs and show you why the biggest names in NC trust Brad's Electrical.
             </p>
@@ -460,13 +959,13 @@
                     </div>
                     <div class="footer__contact-item">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
-                        <span>janet@bradselec.com</span>
+                        <span>info@bradselec.com</span>
                     </div>
                 </div>
             </div>
             
             <div class="footer__bottom">
-                <p class="footer__copyright">© 2026 Brad's Electrical Construction Company, LLC. All rights reserved.</p>
+                <p class="footer__copyright">&copy; 2026 Brad's Electrical Construction Company, LLC. All rights reserved.</p>
                 <div class="footer__certs">
                     <span class="footer__cert">WOSB</span>
                     <span class="footer__cert">SDB</span>
