@@ -97,7 +97,8 @@ function initAnimations() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('animate-fade-in-up');
+                // Match CSS animation hooks: [data-animate].visible
+                entry.target.classList.add('visible');
                 observer.unobserve(entry.target);
             }
         });
@@ -107,7 +108,6 @@ function initAnimations() {
     });
     
     animatedElements.forEach(el => {
-        el.style.opacity = '0';
         observer.observe(el);
     });
 }
