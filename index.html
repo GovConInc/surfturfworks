@@ -468,74 +468,59 @@
     <!-- ============================================
          STATS BAR
          ============================================ -->
-    <section class="stats-section">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-item__number" data-count="20" data-format="years">20+</div>
-                    <div class="stat-item__label">Years in Business</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-item__number">$1.58M+</div>
-                    <div class="stat-item__label">Documented Awards</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-item__number" data-count="12" data-format="plus">12+</div>
-                    <div class="stat-item__label">Completed Projects</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-item__number" data-count="30" data-format="plus">30+</div>
-                    <div class="stat-item__label">Full-Time Employees</div>
-                </div>
+    <style>
+    /* Paste this in your CSS file or keep it here */
+    .stats-section {
+        padding: 4rem 0;
+        background-color: #f8f9fa;
+        text-align: center;
+    }
+    .stats-grid {
+        display: flex;
+        justify-content: center; /* Centers the 3 items perfectly */
+        gap: 4rem; /* Increased gap for better spacing */
+        flex-wrap: wrap;
+    }
+    .stat-item {
+        flex: 0 1 auto;
+        min-width: 200px;
+    }
+    .stat-item__number {
+        font-size: 3.5rem; /* Made it bigger so they can't miss it */
+        font-weight: 800;
+        color: #333;
+        line-height: 1.2;
+        margin-bottom: 0.5rem;
+    }
+    .stat-item__label {
+        font-size: 1.125rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: #666;
+    }
+</style>
+
+<section class="stats-section">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-item__number" data-count="20" data-format="years">20+</div>
+                <div class="stat-item__label">Years of Excellence</div>
+            </div>
+            
+            <div class="stat-item">
+                <div class="stat-item__number">$50M+</div>
+                <div class="stat-item__label">Contract Awards</div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-item__number" data-count="30" data-format="plus">30+</div>
+                <div class="stat-item__label">Dedicated Specialists</div>
             </div>
         </div>
-    </section>
-
-    <!-- ============================================
-         B.R.A.D.S. ACRONYM SECTION
-         ============================================ -->
-    <section class="acronym-section">
-        <div class="container">
-            <div style="text-align: center; margin-bottom: 3rem; position: relative; z-index: 1;">
-                <span class="section-header__label" style="background: rgba(245,166,35,0.2); color: var(--accent);">Our Identity</span>
-                <h2 class="serif-font" style="color: var(--white); margin-top: 1rem; font-size: 2.25rem;">More Than a Name — It's a Promise</h2>
-            </div>
-
-            <div class="acronym-grid">
-                <div class="acronym-card">
-                    <div class="acronym-card__letter">B</div>
-                    <div class="acronym-card__word">Bringing</div>
-                    <p class="acronym-card__desc">Bringing expert electrical solutions to every facility, every time.</p>
-                </div>
-                <div class="acronym-card">
-                    <div class="acronym-card__letter">R</div>
-                    <div class="acronym-card__word">Reach</div>
-                    <p class="acronym-card__desc">Extending our capabilities across North Carolina and beyond.</p>
-                </div>
-                <div class="acronym-card">
-                    <div class="acronym-card__letter">A</div>
-                    <div class="acronym-card__word">And</div>
-                    <p class="acronym-card__desc">Connecting vision with execution on every project we touch.</p>
-                </div>
-                <div class="acronym-card">
-                    <div class="acronym-card__letter">D</div>
-                    <div class="acronym-card__word">Delivering</div>
-                    <p class="acronym-card__desc">Delivering results on time, on budget, and above expectations.</p>
-                </div>
-                <div class="acronym-card">
-                    <div class="acronym-card__letter">S</div>
-                    <div class="acronym-card__word">Solutions</div>
-                    <p class="acronym-card__desc">Complete electrical solutions built on safety, quality, and trust.</p>
-                </div>
-            </div>
-
-            <div style="text-align: center; margin-top: 2.5rem; position: relative; z-index: 1;">
-                <p style="color: var(--accent); font-size: 1.2rem; font-weight: 600; letter-spacing: 1px; margin-bottom: 0;">
-                    Reliable Performance — Every Connection, Every Time.
-                </p>
-            </div>
-        </div>
-    </section>
+    </div>
+</section>
 
     <!-- ============================================
          CORE CAPABILITIES
