@@ -1421,6 +1421,7 @@ p {
         order: -1;
     }
 }
+
 /* ============================================
    CLASSY REDESIGN ADDITIONS
    ============================================ */
@@ -1513,91 +1514,17 @@ p {
     line-height: 1.8;
 }
 
-.mission-refined {
-    background: var(--primary);
-    color: var(--white);
-    padding: 8rem 0;
-    position: relative;
-    overflow: hidden;
-}
-
-.mission-refined::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at top right, rgba(245, 166, 35, 0.1), transparent 50%);
-    pointer-events: none;
-}
-
-.mission-values-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    margin-top: 5rem;
-}
-
-.mission-value {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 2.5rem 1.5rem;
-    border-radius: 16px;
-    text-align: center;
-    transition: var(--transition);
-}
-
-.mission-value:hover {
-    background: rgba(255, 255, 255, 0.1);
-    transform: translateY(-5px);
-}
-
-.mission-value__letter {
-    display: inline-block;
-    font-size: 3.5rem;
-    font-weight: 800;
-    color: var(--accent);
-    margin-bottom: 1rem;
-    line-height: 1;
-    text-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-.mission-value__title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: var(--white);
-}
-
-.mission-value__desc {
-    font-size: 0.9rem;
-    color: rgba(255,255,255,0.7);
-    line-height: 1.6;
-}
-
 @media (max-width: 900px) {
     .executive-card {
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
-    
     .executive-card__header {
         justify-content: center;
-        border-bottom: none;
         flex-direction: column;
         align-items: center;
         gap: 0.5rem;
     }
-    
-    .mission-values-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
 }
 
-@media (max-width: 600px) {
-    .mission-values-grid {
-        grid-template-columns: 1fr;
-    }
-}
