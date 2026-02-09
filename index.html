@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" type="image/png" href="images/brads-logo.png">
+    <link rel="icon" type="image/png" href="./images/brads-logo.png">
     
     <style>
         .serif-font { font-family: 'Playfair Display', serif; }
@@ -19,10 +19,10 @@
         /* ---- Hero ---- */
         .hero {
             background: linear-gradient(rgba(10, 25, 47, 0.88), rgba(10, 25, 47, 0.96)),
-                        url('images/cityscape2096730_1280.jpg');
+                        url('./images/cityscape2096730_1280.jpg');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
+            background-repeat: no-repeat;
         }
 
         /* ---- Credential Strip ---- */
@@ -292,21 +292,6 @@
             color: var(--accent);
         }
 
-        /* ---- Partners ---- */
-        .partners-section {
-            background: var(--white);
-            padding: 5rem 0;
-        }
-        .partners-section__label {
-            color: var(--gray-400);
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-size: 0.85rem;
-            margin-bottom: 3rem;
-            font-weight: 700;
-            text-align: center;
-        }
-
         /* ---- Why Brad's / Differentiators ---- */
         .diff-card {
             text-align: center;
@@ -397,7 +382,7 @@
     <nav class="navbar">
         <div class="container navbar__inner">
             <a href="index.html" class="navbar__logo">
-                <img src="images/brads-logo.png" alt="Brad's Electrical">
+                <img src="./images/brads-logo.png" alt="Brad's Electrical" loading="eager">
             </a>
             
             <div class="navbar__menu">
@@ -452,7 +437,7 @@
     <div class="cred-strip">
         <div class="container cred-strip__inner">
             <div class="cred-strip__gsa">
-                <img src="images/U_S__General_Services_Administration_flag_logo__16624.png" alt="GSA Logo">
+                <img src="./images/U_S__General_Services_Administration_flag_logo__16624.png" alt="GSA Logo" loading="lazy">
                 <div class="cred-strip__gsa-text">
                     <h3 class="serif-font">GSA Schedule Holder</h3>
                     <p>Contract #: <strong>47QSMS24D00BY</strong></p>
@@ -677,15 +662,15 @@
     <!-- ============================================
          PARTNERS
          ============================================ -->
-    <section class="partners-section">
+    <section class="partners">
         <div class="container">
-            <p class="partners-section__label">Trusted By Industry Leaders</p>
+            <p class="partners__title">Trusted By Industry Leaders</p>
             <div class="partners__grid">
-                <div class="partners__item"><img src="images/amazon_logo__CB579561563_.png" alt="Amazon"></div>
-                <div class="partners__item"><img src="images/United-States-Postal-Service-Logo.png" alt="USPS"></div>
-                <div class="partners__item"><img src="images/Cummins-Logo-Vector-768x768.png" alt="Cummins"></div>
-                <div class="partners__item"><img src="images/PG-Symbol.png" alt="Procter & Gamble"></div>
-                <div class="partners__item"><img src="images/U_S__General_Services_Administration_flag_logo__16624.png" alt="GSA"></div>
+                <div class="partners__item"><img src="./images/amazon_logo__CB579561563_.png" alt="Amazon" loading="lazy"></div>
+                <div class="partners__item"><img src="./images/United-States-Postal-Service-Logo.png" alt="USPS" loading="lazy"></div>
+                <div class="partners__item"><img src="./images/Cummins-Logo-Vector-768x768.png" alt="Cummins" loading="lazy"></div>
+                <div class="partners__item"><img src="./images/PG-Symbol.png" alt="Procter & Gamble" loading="lazy"></div>
+                <div class="partners__item"><img src="./images/U_S__General_Services_Administration_flag_logo__16624.png" alt="GSA" loading="lazy"></div>
             </div>
         </div>
     </section>
@@ -801,7 +786,7 @@
             <div class="footer__grid">
                 <div>
                     <div class="footer__logo">
-                        <img src="images/brads-logo.png" alt="Brad's Electrical">
+                        <img src="./images/brads-logo.png" alt="Brad's Electrical" loading="lazy">
                     </div>
                     <p class="footer__about">
                         Premier electrical contractor serving commercial, industrial, and government clients across North Carolina. Woman-Owned Small Business with 20+ years of field experience.

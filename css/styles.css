@@ -322,7 +322,8 @@ p {
     display: flex;
     align-items: center;
     padding-top: var(--nav-height);
-    background: linear-gradient(135deg, var(--primary) 0%, #0f2744 100%);
+    background-color: var(--primary);
+    background-image: linear-gradient(135deg, var(--primary) 0%, #0f2744 100%);
     position: relative;
     overflow: hidden;
 }
@@ -332,10 +333,14 @@ p {
     position: absolute;
     top: 0;
     right: 0;
-    width: 50%;
+    width: 100%;
     height: 100%;
-    background: url('../images/cityscape2096730_1280.jpg') center/cover;
-    opacity: 0.15;
+    background-image: url('../images/cityscape2096730_1280.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.12;
+    pointer-events: none;
 }
 
 .hero__content {
@@ -421,19 +426,21 @@ p {
    PARTNERS / LOGO BAR
    ============================================ */
 .partners {
-    background: var(--gray-50);
-    padding: 3rem 0;
+    background: var(--white);
+    padding: 4rem 0;
     overflow: hidden;
+    border-top: 1px solid var(--gray-100);
+    border-bottom: 1px solid var(--gray-100);
 }
 
 .partners__title {
     text-align: center;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     color: var(--gray-400);
-    margin-bottom: 2rem;
-    font-weight: 600;
+    margin-bottom: 2.5rem;
+    font-weight: 700;
 }
 
 .partners__grid {
@@ -441,20 +448,40 @@ p {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 5rem;
+    gap: 3rem 4rem;
+}
+
+.partners__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 120px;
 }
 
 .partners__item img {
-    height: 90px;
+    max-height: 70px;
+    max-width: 150px;
     width: auto;
+    height: auto;
+    object-fit: contain;
     filter: grayscale(100%);
-    opacity: 0.6;
+    opacity: 0.5;
     transition: var(--transition);
 }
 
 .partners__item:hover img {
     filter: grayscale(0);
     opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .partners__grid {
+        gap: 2rem 3rem;
+    }
+    .partners__item img {
+        max-height: 50px;
+        max-width: 100px;
+    }
 }
 
 /* ============================================
@@ -906,17 +933,26 @@ p {
    ============================================ */
 .page-hero {
     padding: 10rem 0 5rem;
-    background: linear-gradient(135deg, var(--primary) 0%, #0f2744 100%);
+    background-color: var(--primary);
+    background-image: linear-gradient(135deg, var(--primary) 0%, #0f2744 100%);
     text-align: center;
     position: relative;
+    overflow: hidden;
 }
 
 .page-hero::before {
     content: '';
     position: absolute;
-    inset: 0;
-    background: url('../images/electrician1696757_1280.jpg') center/cover;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../images/electrician1696757_1280.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     opacity: 0.1;
+    pointer-events: none;
 }
 
 .page-hero__content {
