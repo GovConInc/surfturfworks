@@ -441,11 +441,11 @@ p {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 3rem;
+    gap: 5rem;
 }
 
 .partners__item img {
-    height: 40px;
+    height: 90px;
     width: auto;
     filter: grayscale(100%);
     opacity: 0.6;
@@ -1595,5 +1595,6 @@ p {
                  g r i d - t e m p l a t e - c o l u m n s :   1 f r ; 
          } 
  } 
-  
+ 
+ 
  
